@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-bg-custom: #080810;
+  --color-panel-custom: rgba(18, 18, 28, 0.55);
+  --color-border-custom: rgba(255, 255, 255, 0.08);
+  --color-accent-custom: #0A84FF;
+  --color-text-primary: #FFFFFF;
+  --color-text-secondary: #9A9AA6;
+  --color-green-custom: #30D158;
+  --color-[#30D158]: #30D158;
+  --color-red-custom: #FF453A;
+
+  --font-sans: "Inter", "SF Pro Display", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-mono: "JetBrains Mono", "SF Mono", ui-monospace, monospace;
+}
+
+/* Base resets & styled scrollbars for data grid tables */
+body {
+  background-color: #05050d;
+  color: #FFFFFF;
+  font-family: "Inter", "SF Pro Display", ui-sans-serif, system-ui, sans-serif;
+  overflow: hidden;
+}
+
+@utility glass-macos {
+  background: rgba(15, 15, 25, 0.6);
+  backdrop-filter: blur(40px) saturate(220%);
+  -webkit-backdrop-filter: blur(40px) saturate(220%);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 
+    inset 0 1px 1px rgba(255, 255, 255, 0.15),
+    0 1px 2px rgba(0, 0, 0, 0.05),
+    0 8px 32px rgba(0, 0, 0, 0.35);
+}
+
+@utility glass-card {
+  background: rgba(25, 25, 38, 0.4);
+  backdrop-filter: blur(25px) saturate(180%);
+  -webkit-backdrop-filter: blur(25px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 
+    inset 0 1px 0.5px rgba(255, 255, 255, 0.1),
+    0 4px 20px rgba(0, 0, 0, 0.25);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+
+  &:hover {
+    background: rgba(30, 30, 48, 0.48);
+    border-color: rgba(255, 255, 255, 0.15);
+    box-shadow: 
+      inset 0 1px 1px rgba(255, 255, 255, 0.18),
+      0 12px 36px rgba(0, 0, 0, 0.4);
+    transform: translateY(-1px);
+  }
+}
+
+@utility glass-button {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.03) 100%);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 
+    inset 0 1px 0.5px rgba(255, 255, 255, 0.15),
+    0 1px 2px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+
+  &:hover {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.05) 100%);
+    border-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 
+      inset 0 1px 0.5px rgba(255, 255, 255, 0.25),
+      0 4px 12px rgba(0, 0, 0, 0.2);
+    transform: translateY(-0.5px);
+  }
+}
+
+@utility glass-button-active {
+  background: linear-gradient(180deg, #0A84FF 0%, #0055FF 100%);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 
+    inset 0 1.5px 1px rgba(255, 255, 255, 0.35),
+    0 4px 16px rgba(10, 132, 255, 0.35);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+
+  &:hover {
+    background: linear-gradient(180deg, #3399FF 0%, #0A84FF 100%);
+    box-shadow: 
+      inset 0 1.5px 1px rgba(255, 255, 255, 0.45),
+      0 8px 24px rgba(10, 132, 255, 0.5);
+    transform: translateY(-0.5px);
+  }
+}
+
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #121212;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #333333;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #0A84FF;
+}

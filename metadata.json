@@ -1,0 +1,6 @@
+{
+  "name": "World Cup 2026 Tactical Workbench",
+  "description": "Professional football tactical analysis, simulation, and predictive modeling system for the 2026 FIFA World Cup, designed with a native macOS styling.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
