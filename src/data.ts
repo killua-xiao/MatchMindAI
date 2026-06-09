@@ -6,7 +6,7 @@ export const initialTeams: FootballTeam[] = [
     "name": "美国",
     "code": "USA",
     "confederation": "CONCACAF",
-    "group": "A",
+    "group": "D",
     "elo": 1840,
     "coach": {
       "name": "毛里西奥·波切蒂诺",
@@ -111,7 +111,7 @@ export const initialTeams: FootballTeam[] = [
       "边后卫插上起速极快"
     ],
     "weaknesses": [
-      "在中锋位置（五号位/九号位）长期缺乏稳定的关键得分手",
+      "在中锋位置（九号位）长期缺乏稳定的关键得分手",
       "高分贝高空横传球防守中容易暴露出盯人空白"
     ],
     "injuries": [
@@ -245,7 +245,7 @@ export const initialTeams: FootballTeam[] = [
     "name": "加拿大",
     "code": "CAN",
     "confederation": "CONCACAF",
-    "group": "A",
+    "group": "B",
     "elo": 1780,
     "coach": {
       "name": "杰西·马希",
@@ -360,7 +360,7 @@ export const initialTeams: FootballTeam[] = [
     "name": "新西兰",
     "code": "NZL",
     "confederation": "OFC",
-    "group": "A",
+    "group": "G",
     "elo": 1550,
     "coach": {
       "name": "达伦·巴泽利",
@@ -475,7 +475,7 @@ export const initialTeams: FootballTeam[] = [
     "name": "阿根廷",
     "code": "ARG",
     "confederation": "CONMEBOL",
-    "group": "B",
+    "group": "J",
     "elo": 2150,
     "coach": {
       "name": "利昂内尔·斯卡洛尼",
@@ -590,7 +590,7 @@ export const initialTeams: FootballTeam[] = [
     "name": "瑞典",
     "code": "SWE",
     "confederation": "UEFA",
-    "group": "B",
+    "group": "F",
     "elo": 1870,
     "coach": {
       "name": "容·达尔·托马森",
@@ -705,7 +705,7 @@ export const initialTeams: FootballTeam[] = [
     "name": "伊朗",
     "code": "IRN",
     "confederation": "AFC",
-    "group": "B",
+    "group": "G",
     "elo": 1770,
     "coach": {
       "name": "阿米尔·加莱诺伊",
@@ -820,7 +820,7 @@ export const initialTeams: FootballTeam[] = [
     "name": "南非",
     "code": "RSA",
     "confederation": "CAF",
-    "group": "B",
+    "group": "A",
     "elo": 1690,
     "coach": {
       "name": "雨果·布鲁斯",
@@ -935,7 +935,7 @@ export const initialTeams: FootballTeam[] = [
     "name": "法国",
     "code": "FRA",
     "confederation": "UEFA",
-    "group": "C",
+    "group": "I",
     "elo": 2110,
     "coach": {
       "name": "迪迪埃·德尚",
@@ -1055,356 +1055,11 @@ export const initialTeams: FootballTeam[] = [
     ]
   },
   {
-    "id": "serbia",
-    "name": "塞尔维亚",
-    "code": "SRB",
-    "confederation": "UEFA",
-    "group": "C",
-    "elo": 1820,
-    "coach": {
-      "name": "德拉甘·斯托伊科维奇",
-      "style": "直接边路起球轰炸，硬朗锋线碾压",
-      "experienceYears": 12
-    },
-    "ratings": {
-      "attack": 83,
-      "midfield": 77,
-      "defense": 75,
-      "benchDepth": 74,
-      "experience": 80
-    },
-    "tactics": {
-      "possession": 49,
-      "pressing": 60,
-      "counterAttack": 72,
-      "defenseLine": 45,
-      "physicality": 89,
-      "setPiece": 85,
-      "preferredFormation": "3-4-1-2"
-    },
-    "keyPlayers": [
-      {
-        "name": "杜尚·弗拉霍维奇",
-        "club": "尤文图斯",
-        "rating": 86,
-        "role": "FWD",
-        "status": "Healthy"
-      },
-      {
-        "name": "亚历山大·米特罗维奇",
-        "club": "利雅得新月",
-        "rating": 85,
-        "role": "FWD",
-        "status": "Healthy"
-      },
-      {
-        "name": "谢尔盖·米林科维奇-萨维奇",
-        "club": "利雅得新月",
-        "rating": 83,
-        "role": "MID",
-        "status": "Healthy"
-      },
-      {
-        "name": "万亚·米林科维奇-萨维奇",
-        "club": "都灵",
-        "rating": 79,
-        "role": "GK",
-        "status": "Healthy"
-      },
-      {
-        "name": "尼古拉·米伦科维奇",
-        "club": "诺丁汉森林",
-        "rating": 81,
-        "role": "DEF",
-        "status": "Healthy"
-      },
-      {
-        "name": "斯特拉希尼亚·帕夫洛维奇",
-        "club": "AC米兰",
-        "rating": 80,
-        "role": "DEF",
-        "status": "Healthy"
-      },
-      {
-        "name": "菲利普·科斯蒂奇",
-        "club": "费内巴切",
-        "rating": 78,
-        "role": "MID",
-        "status": "Healthy"
-      },
-      {
-        "name": "杜尚·塔迪奇",
-        "club": "费内巴切",
-        "rating": 80,
-        "role": "MID",
-        "status": "Healthy"
-      }
-    ],
-    "recentForm": [
-      {
-        "opponent": "俄罗斯",
-        "score": "1 - 1",
-        "xg": "1.2 - 1.1",
-        "date": "2026-03-21",
-        "type": "Friendly",
-        "outcome": "D"
-      },
-      {
-        "opponent": "瑞典",
-        "score": "2 - 1",
-        "xg": "1.8 - 1.4",
-        "date": "2026-05-14",
-        "type": "Friendly",
-        "outcome": "W"
-      }
-    ],
-    "strengths": [
-      "致命的空中优势（弗拉霍维奇与米特罗维奇）",
-      "在进攻三区的身体对抗统治力",
-      "精准的边路传中"
-    ],
-    "weaknesses": [
-      "面对对手横向转移时的防守脆弱性",
-      "攻防转换中回追冲刺较慢"
-    ],
-    "injuries": []
-  },
-  {
-    "id": "peru",
-    "name": "秘鲁",
-    "code": "PER",
-    "confederation": "CONMEBOL",
-    "group": "C",
-    "elo": 1740,
-    "coach": {
-      "name": "豪尔赫·福萨蒂",
-      "style": "防守型 3-5-2 低位阵防",
-      "experienceYears": 24
-    },
-    "ratings": {
-      "attack": 73,
-      "midfield": 74,
-      "defense": 76,
-      "benchDepth": 70,
-      "experience": 81
-    },
-    "tactics": {
-      "possession": 42,
-      "pressing": 58,
-      "counterAttack": 80,
-      "defenseLine": 38,
-      "physicality": 77,
-      "setPiece": 73,
-      "preferredFormation": "3-5-2"
-    },
-    "keyPlayers": [
-      {
-        "name": "詹卢卡·拉帕杜拉",
-        "club": "卡利亚里",
-        "rating": 78,
-        "role": "FWD",
-        "status": "Healthy"
-      },
-      {
-        "name": "路易斯·阿德文库拉",
-        "club": "博卡青年",
-        "rating": 79,
-        "role": "DEF",
-        "status": "Healthy"
-      },
-      {
-        "name": "雷纳托·塔皮亚",
-        "club": "莱加内斯",
-        "rating": 80,
-        "role": "MID",
-        "status": "Healthy"
-      },
-      {
-        "name": "佩德罗·加alese",
-        "club": "奥兰多城",
-        "rating": 76,
-        "role": "GK",
-        "status": "Healthy"
-      },
-      {
-        "name": "亚历山大·卡伦斯",
-        "club": "雅典AEK",
-        "rating": 74,
-        "role": "DEF",
-        "status": "Healthy"
-      },
-      {
-        "name": "皮耶罗·奎斯佩",
-        "club": "美洲狮",
-        "rating": 72,
-        "role": "MID",
-        "status": "Healthy"
-      },
-      {
-        "name": "卡洛斯·赞布拉诺",
-        "club": "利马联盟",
-        "rating": 73,
-        "role": "DEF",
-        "status": "Healthy"
-      },
-      {
-        "name": "安迪·波洛",
-        "club": "大学队",
-        "rating": 71,
-        "role": "MID",
-        "status": "Healthy"
-      }
-    ],
-    "recentForm": [
-      {
-        "opponent": "委内瑞拉",
-        "score": "1 - 1",
-        "xg": "0.8 - 1.1",
-        "date": "2026-03-25",
-        "type": "Qualifier",
-        "outcome": "D"
-      },
-      {
-        "opponent": "巴拉圭",
-        "score": "2 - 0",
-        "xg": "1.6 - 0.7",
-        "date": "2026-05-19",
-        "type": "Qualifier",
-        "outcome": "W"
-      }
-    ],
-    "strengths": [
-      "阿德温库拉在边路的充沛体能与大步幅冲刺",
-      "极其坚固的防守双后腰",
-      "身体对抗中的顽强斗志"
-    ],
-    "weaknesses": [
-      "严重老龄化的中场组织核心",
-      "近期正式比赛中进球率偏低"
-    ],
-    "injuries": []
-  },
-  {
-    "id": "nigeria",
-    "name": "尼日利亚",
-    "code": "NGA",
-    "confederation": "CAF",
-    "group": "C",
-    "elo": 1800,
-    "coach": {
-      "name": "奥古斯丁·埃瓜沃恩",
-      "style": "爆发性的翼卫两边缘转化，极高速度的纵深闪击渗透",
-      "experienceYears": 15
-    },
-    "ratings": {
-      "attack": 86,
-      "midfield": 75,
-      "defense": 75,
-      "benchDepth": 78,
-      "experience": 77
-    },
-    "tactics": {
-      "possession": 45,
-      "pressing": 72,
-      "counterAttack": 92,
-      "defenseLine": 52,
-      "physicality": 84,
-      "setPiece": 71,
-      "preferredFormation": "4-3-3"
-    },
-    "keyPlayers": [
-      {
-        "name": "维克托·奥斯梅恩",
-        "club": "加拉塔萨雷",
-        "rating": 90,
-        "role": "FWD",
-        "status": "Healthy"
-      },
-      {
-        "name": "阿德莫拉·卢克曼",
-        "club": "亚特兰大",
-        "rating": 86,
-        "role": "FWD",
-        "status": "Healthy"
-      },
-      {
-        "name": "亚历克斯·伊沃比",
-        "club": "富勒姆",
-        "rating": 80,
-        "role": "MID",
-        "status": "Healthy"
-      },
-      {
-        "name": "斯坦利·恩瓦巴利",
-        "club": "奇帕联",
-        "rating": 75,
-        "role": "GK",
-        "status": "Healthy"
-      },
-      {
-        "name": "威廉·特罗斯特-埃康",
-        "club": "卡利杰",
-        "rating": 78,
-        "role": "DEF",
-        "status": "Healthy"
-      },
-      {
-        "name": "卡尔文·巴锡",
-        "club": "富勒姆",
-        "rating": 77,
-        "role": "DEF",
-        "status": "Healthy"
-      },
-      {
-        "name": "威尔弗雷德·恩迪迪",
-        "club": "莱斯特城",
-        "rating": 81,
-        "role": "MID",
-        "status": "Healthy"
-      },
-      {
-        "name": "维克托·博尼法斯",
-        "club": "勒沃库森",
-        "rating": 84,
-        "role": "FWD",
-        "status": "Healthy"
-      }
-    ],
-    "recentForm": [
-      {
-        "opponent": "加纳",
-        "score": "1 - 2",
-        "xg": "1.4 - 1.5",
-        "date": "2026-03-22",
-        "type": "Friendly",
-        "outcome": "L"
-      },
-      {
-        "opponent": "南非",
-        "score": "1 - 1",
-        "xg": "1.2 - 1.0",
-        "date": "2026-03-18",
-        "type": "Qualifier",
-        "outcome": "D"
-      }
-    ],
-    "strengths": [
-      "在前锋、中前场能传善射配置极高，各线深度极为丰富奢侈 (奥斯梅恩、卢克曼)",
-      "攻防转换时惊人的纵向推进速度",
-      "身体素质出众的空中支点"
-    ],
-    "weaknesses": [
-      "门将发挥不稳定",
-      "攻防转换中替补中场配置失衡"
-    ],
-    "injuries": []
-  },
-  {
     "id": "england",
     "name": "英格兰",
     "code": "ENG",
     "confederation": "UEFA",
-    "group": "D",
+    "group": "L",
     "elo": 2060,
     "coach": {
       "name": "托马斯·图赫尔",
@@ -1528,7 +1183,7 @@ export const initialTeams: FootballTeam[] = [
     "name": "厄瓜多尔",
     "code": "ECU",
     "confederation": "CONMEBOL",
-    "group": "D",
+    "group": "E",
     "elo": 1850,
     "coach": {
       "name": "塞巴斯蒂安·贝卡切切",
@@ -1643,7 +1298,7 @@ export const initialTeams: FootballTeam[] = [
     "name": "韩国",
     "code": "KOR",
     "confederation": "AFC",
-    "group": "D",
+    "group": "A",
     "elo": 1820,
     "coach": {
       "name": "洪明甫",
@@ -1754,126 +1409,11 @@ export const initialTeams: FootballTeam[] = [
     "injuries": []
   },
   {
-    "id": "cameroon",
-    "name": "喀麦隆",
-    "code": "CMR",
-    "confederation": "CAF",
-    "group": "D",
-    "elo": 1715,
-    "coach": {
-      "name": "马克·布赖斯",
-      "style": "物理化硬骨骼禁区中空分布，强硬单传和边卫连线出球",
-      "experienceYears": 19
-    },
-    "ratings": {
-      "attack": 74,
-      "midfield": 73,
-      "defense": 74,
-      "benchDepth": 69,
-      "experience": 79
-    },
-    "tactics": {
-      "possession": 44,
-      "pressing": 60,
-      "counterAttack": 82,
-      "defenseLine": 45,
-      "physicality": 88,
-      "setPiece": 80,
-      "preferredFormation": "4-1-4-1"
-    },
-    "keyPlayers": [
-      {
-        "name": "布莱恩·姆贝乌莫",
-        "club": "布伦特福德",
-        "rating": 82,
-        "role": "FWD",
-        "status": "Healthy"
-      },
-      {
-        "name": "安德烈-弗兰克·赞博·安古伊萨",
-        "club": "Napoli",
-        "rating": 81,
-        "role": "MID",
-        "status": "Healthy"
-      },
-      {
-        "name": "安德烈·奥纳纳",
-        "club": "Manchester United",
-        "rating": 84,
-        "role": "GK",
-        "status": "Healthy"
-      },
-      {
-        "name": "让-夏尔·卡斯特莱托",
-        "club": "南特",
-        "rating": 75,
-        "role": "DEF",
-        "status": "Healthy"
-      },
-      {
-        "name": "克里斯托弗·伍",
-        "club": "雷恩",
-        "rating": 74,
-        "role": "DEF",
-        "status": "Healthy"
-      },
-      {
-        "name": "萨穆埃尔·乌姆·古埃特",
-        "club": "伊韦尔东",
-        "rating": 71,
-        "role": "MID",
-        "status": "Healthy"
-      },
-      {
-        "name": "文森特·阿布巴卡尔",
-        "club": "哈塔伊体育",
-        "rating": 78,
-        "role": "FWD",
-        "status": "Healthy"
-      },
-      {
-        "name": "卡尔·托科·埃卡姆比",
-        "club": "达曼协作",
-        "rating": 76,
-        "role": "FWD",
-        "status": "Healthy"
-      }
-    ],
-    "recentForm": [
-      {
-        "opponent": "安哥拉",
-        "score": "1 - 1",
-        "xg": "1.1 - 1.1",
-        "date": "2026-03-24",
-        "type": "Qualifier",
-        "outcome": "D"
-      },
-      {
-        "opponent": "佛得角",
-        "score": "4 - 1",
-        "xg": "2.8 - 0.7",
-        "date": "2026-05-01",
-        "type": "Qualifier",
-        "outcome": "W"
-      }
-    ],
-    "strengths": [
-      "安古伊萨强大的地面覆盖能力",
-      "奥纳纳顶级的后场出球与组织调度能力",
-      "极具身体对抗的前场支点作用"
-    ],
-    "weaknesses": [
-      "防守端战术性的过度扑抢",
-      "俱乐部内部管理层面的分心因素"
-    ],
-    "injuries": []
-  },
-  {
     "id": "spain",
     "name": "西班牙",
     "code": "ESP",
     "confederation": "UEFA",
-    "group": "E",
+    "group": "H",
     "elo": 2090,
     "coach": {
       "name": "路易斯·德拉富恩特",
@@ -1988,7 +1528,7 @@ export const initialTeams: FootballTeam[] = [
     "name": "哥伦比亚",
     "code": "COL",
     "confederation": "CONMEBOL",
-    "group": "E",
+    "group": "K",
     "elo": 1900,
     "coach": {
       "name": "内斯托尔·洛伦佐",
@@ -2099,241 +1639,11 @@ export const initialTeams: FootballTeam[] = [
     "injuries": []
   },
   {
-    "id": "poland",
-    "name": "波兰",
-    "code": "POL",
-    "confederation": "UEFA",
-    "group": "E",
-    "elo": 1795,
-    "coach": {
-      "name": "米哈乌·普罗比日",
-      "style": "防守紧凑的窄防线，直接将高空落点做给顶尖物理大前锋",
-      "experienceYears": 15
-    },
-    "ratings": {
-      "attack": 81,
-      "midfield": 74,
-      "defense": 75,
-      "benchDepth": 71,
-      "experience": 82
-    },
-    "tactics": {
-      "possession": 44,
-      "pressing": 55,
-      "counterAttack": 78,
-      "defenseLine": 42,
-      "physicality": 83,
-      "setPiece": 81,
-      "preferredFormation": "3-5-2"
-    },
-    "keyPlayers": [
-      {
-        "name": "罗伯特·莱万多夫斯基",
-        "club": "巴塞罗那",
-        "rating": 88,
-        "role": "FWD",
-        "status": "Healthy"
-      },
-      {
-        "name": "皮奥特尔·泽林斯基",
-        "club": "Inter Milan",
-        "rating": 84,
-        "role": "MID",
-        "status": "Healthy"
-      },
-      {
-        "name": "沃伊切赫·什琴斯尼",
-        "club": "巴塞罗那",
-        "rating": 84,
-        "role": "GK",
-        "status": "Healthy"
-      },
-      {
-        "name": "乌卡什·斯科鲁普斯基",
-        "club": "博洛尼亚",
-        "rating": 78,
-        "role": "GK",
-        "status": "Healthy"
-      },
-      {
-        "name": "扬·贝德纳雷克",
-        "club": "修咸顿",
-        "rating": 76,
-        "role": "DEF",
-        "status": "Healthy"
-      },
-      {
-        "name": "塞巴斯蒂安·希曼斯基",
-        "club": "费内巴切",
-        "rating": 80,
-        "role": "MID",
-        "status": "Healthy"
-      },
-      {
-        "name": "尼古拉·扎莱夫斯基",
-        "club": "罗马",
-        "rating": 77,
-        "role": "MID",
-        "status": "Healthy"
-      },
-      {
-        "name": "卡罗尔·希维德尔斯基",
-        "club": "夏洛特FC",
-        "rating": 75,
-        "role": "FWD",
-        "status": "Healthy"
-      }
-    ],
-    "recentForm": [
-      {
-        "opponent": "爱沙尼亚",
-        "score": "5 - 1",
-        "xg": "3.4 - 0.4",
-        "date": "2026-03-21",
-        "type": "Qualifier",
-        "outcome": "W"
-      },
-      {
-        "opponent": "威尔士",
-        "score": "0 - 0",
-        "xg": "1.1 - 1.1",
-        "date": "2026-03-25",
-        "type": "Qualifier",
-        "outcome": "D"
-      }
-    ],
-    "strengths": [
-      "罗伯特·莱万多夫斯基致命的终结能力",
-      "皮奥特尔·杰林斯基在中路手术刀般的穿透传球",
-      "什琴斯尼在大赛中的神勇扑救"
-    ],
-    "weaknesses": [
-      "边路阵容深度的局限",
-      "防守深区角球（后点）时的漏洞"
-    ],
-    "injuries": []
-  },
-  {
-    "id": "mali",
-    "name": "马里",
-    "code": "MLI",
-    "confederation": "CAF",
-    "group": "E",
-    "elo": 1710,
-    "coach": {
-      "name": "汤姆·圣菲特",
-      "style": "紧凑沉稳的中场双后腰，主打身体对抗与球权绞杀阻击",
-      "experienceYears": 18
-    },
-    "ratings": {
-      "attack": 72,
-      "midfield": 79,
-      "defense": 74,
-      "benchDepth": 68,
-      "experience": 71
-    },
-    "tactics": {
-      "possession": 46,
-      "pressing": 68,
-      "counterAttack": 80,
-      "defenseLine": 46,
-      "physicality": 86,
-      "setPiece": 72,
-      "preferredFormation": "4-2-3-1"
-    },
-    "keyPlayers": [
-      {
-        "name": "伊夫·比苏马",
-        "club": "热刺",
-        "rating": 82,
-        "role": "MID",
-        "status": "Healthy"
-      },
-      {
-        "name": "阿马杜·海达拉",
-        "club": "莱比锡RB",
-        "rating": 81,
-        "role": "MID",
-        "status": "Healthy"
-      },
-      {
-        "name": "哈马里·特拉奥雷",
-        "club": "皇家社会",
-        "rating": 78,
-        "role": "DEF",
-        "status": "Healthy"
-      },
-      {
-        "name": "吉吉·迪亚拉",
-        "club": "年轻非洲人",
-        "rating": 71,
-        "role": "GK",
-        "status": "Healthy"
-      },
-      {
-        "name": "布巴卡尔·库亚特",
-        "club": "蒙彼利埃",
-        "rating": 74,
-        "role": "DEF",
-        "status": "Healthy"
-      },
-      {
-        "name": "迪亚迪·萨马塞库",
-        "club": "加迪斯",
-        "rating": 73,
-        "role": "MID",
-        "status": "Healthy"
-      },
-      {
-        "name": "塞古·科伊塔",
-        "club": "云达不莱梅",
-        "rating": 74,
-        "role": "FWD",
-        "status": "Healthy"
-      },
-      {
-        "name": "埃尔·比拉尔·图雷",
-        "club": "斯图加特",
-        "rating": 75,
-        "role": "FWD",
-        "status": "Healthy"
-      }
-    ],
-    "recentForm": [
-      {
-        "opponent": "毛里塔尼亚",
-        "score": "2 - 0",
-        "xg": "1.6 - 0.5",
-        "date": "2026-03-22",
-        "type": "Friendly",
-        "outcome": "W"
-      },
-      {
-        "opponent": "尼日利亚",
-        "score": "2 - 0",
-        "xg": "1.4 - 0.8",
-        "date": "2026-03-26",
-        "type": "Friendly",
-        "outcome": "W"
-      }
-    ],
-    "strengths": [
-      "惊人的中场绞杀力（比苏马与海达拉）",
-      "运动能力出众的中后卫防线",
-      "极高的体能指数"
-    ],
-    "weaknesses": [
-      "前锋在中路防守压力下极易出现失误",
-      "长传球效率偏低"
-    ],
-    "injuries": []
-  },
-  {
     "id": "belgium",
     "name": "比利时",
     "code": "BEL",
     "confederation": "UEFA",
-    "group": "F",
+    "group": "G",
     "elo": 1880,
     "coach": {
       "name": "多梅尼科·特德斯科",
@@ -2457,7 +1767,7 @@ export const initialTeams: FootballTeam[] = [
     "name": "埃及",
     "code": "EGY",
     "confederation": "CAF",
-    "group": "F",
+    "group": "G",
     "elo": 1785,
     "coach": {
       "name": "霍萨姆·哈桑",
@@ -2568,241 +1878,11 @@ export const initialTeams: FootballTeam[] = [
     "injuries": []
   },
   {
-    "id": "ukraine",
-    "name": "乌克兰",
-    "code": "UKR",
-    "confederation": "UEFA",
-    "group": "F",
-    "elo": 1810,
-    "coach": {
-      "name": "谢尔盖·雷布罗夫",
-      "style": "对称式控球层层堆积推进，翼卫高频压上过载插上",
-      "experienceYears": 13
-    },
-    "ratings": {
-      "attack": 83,
-      "midfield": 81,
-      "defense": 79,
-      "benchDepth": 78,
-      "experience": 76
-    },
-    "tactics": {
-      "possession": 55,
-      "pressing": 65,
-      "counterAttack": 80,
-      "defenseLine": 55,
-      "physicality": 77,
-      "setPiece": 72,
-      "preferredFormation": "4-2-3-1"
-    },
-    "keyPlayers": [
-      {
-        "name": "阿尔乔姆·多夫比克",
-        "club": "罗马",
-        "rating": 85,
-        "role": "FWD",
-        "status": "Healthy"
-      },
-      {
-        "name": "奥列克桑德·津琴科",
-        "club": "阿森纳",
-        "rating": 82,
-        "role": "MID",
-        "status": "Healthy"
-      },
-      {
-        "name": "安德里·卢宁",
-        "club": "皇家马德里",
-        "rating": 84,
-        "role": "GK",
-        "status": "Healthy"
-      },
-      {
-        "name": "阿纳托利·特鲁宾",
-        "club": "本菲卡",
-        "rating": 81,
-        "role": "GK",
-        "status": "Healthy"
-      },
-      {
-        "name": "伊利亚·扎巴尔尼",
-        "club": "伯恩茅斯",
-        "rating": 81,
-        "role": "DEF",
-        "status": "Healthy"
-      },
-      {
-        "name": "格奥尔基·苏达科夫",
-        "club": "顿涅茨克矿工",
-        "rating": 79,
-        "role": "MID",
-        "status": "Healthy"
-      },
-      {
-        "name": "米哈伊洛·穆德里克",
-        "club": "切尔西",
-        "rating": 79,
-        "role": "FWD",
-        "status": "Healthy"
-      },
-      {
-        "name": "维克托·齐甘科夫",
-        "club": "赫罗纳",
-        "rating": 82,
-        "role": "MID",
-        "status": "Healthy"
-      }
-    ],
-    "recentForm": [
-      {
-        "opponent": "波黑",
-        "score": "2 - 1",
-        "xg": "1.6 - 1.1",
-        "date": "2026-03-21",
-        "type": "Qualifier",
-        "outcome": "W"
-      },
-      {
-        "opponent": "冰岛",
-        "score": "2 - 1",
-        "xg": "1.9 - 0.9",
-        "date": "2026-03-26",
-        "type": "Qualifier",
-        "outcome": "W"
-      }
-    ],
-    "strengths": [
-      "极具杀伤力的中锋支点作用（多夫比克）",
-      "津琴科内收内切组织",
-      "门将位置的强劲实力（卢宁）"
-    ],
-    "weaknesses": [
-      "防守盯人时偶尔出现的注意力不集中",
-      "难以应对顶级的强力高位逼抢"
-    ],
-    "injuries": []
-  },
-  {
-    "id": "chile",
-    "name": "智利",
-    "code": "CHI",
-    "confederation": "CONMEBOL",
-    "group": "F",
-    "elo": 1750,
-    "coach": {
-      "name": "里卡多·加雷卡",
-      "style": "顽向甚至偏向偏执的战术铁律防线，中圈极硬物理人盯人对位绞杀",
-      "experienceYears": 22
-    },
-    "ratings": {
-      "attack": 74,
-      "midfield": 76,
-      "defense": 75,
-      "benchDepth": 70,
-      "experience": 85
-    },
-    "tactics": {
-      "possession": 48,
-      "pressing": 62,
-      "counterAttack": 81,
-      "defenseLine": 45,
-      "physicality": 80,
-      "setPiece": 75,
-      "preferredFormation": "4-3-3"
-    },
-    "keyPlayers": [
-      {
-        "name": "亚历克西斯·桑切斯",
-        "club": "乌迪内斯",
-        "rating": 79,
-        "role": "FWD",
-        "status": "Healthy"
-      },
-      {
-        "name": "埃里克·普尔加尔",
-        "club": "弗拉门戈",
-        "rating": 78,
-        "role": "MID",
-        "status": "Healthy"
-      },
-      {
-        "name": "吉列尔莫·马里潘",
-        "club": "都灵",
-        "rating": 78,
-        "role": "DEF",
-        "status": "Healthy"
-      },
-      {
-        "name": "布拉沃",
-        "club": "自由球员",
-        "rating": 75,
-        "role": "GK",
-        "status": "Healthy"
-      },
-      {
-        "name": "保罗·迪亚斯",
-        "club": "河床",
-        "rating": 76,
-        "role": "DEF",
-        "status": "Healthy"
-      },
-      {
-        "name": "罗德里戈·埃切维里亚",
-        "club": "飓风队",
-        "rating": 73,
-        "role": "MID",
-        "status": "Healthy"
-      },
-      {
-        "name": "维克托·达维拉",
-        "club": "莫斯科陆军",
-        "rating": 74,
-        "role": "FWD",
-        "status": "Healthy"
-      },
-      {
-        "name": "达里奥·奥索里奥",
-        "club": "中日德兰",
-        "rating": 75,
-        "role": "MID",
-        "status": "Healthy"
-      }
-    ],
-    "recentForm": [
-      {
-        "opponent": "阿尔巴尼亚",
-        "score": "3 - 0",
-        "xg": "2.1 - 0.5",
-        "date": "2026-03-22",
-        "type": "Friendly",
-        "outcome": "W"
-      },
-      {
-        "opponent": "法国",
-        "score": "2 - 3",
-        "xg": "1.4 - 2.2",
-        "date": "2026-03-26",
-        "type": "Friendly",
-        "outcome": "L"
-      }
-    ],
-    "strengths": [
-      "经验丰富的大赛老将",
-      "低位防守中侵略性极强的放铲",
-      "极强的中场战术意识"
-    ],
-    "weaknesses": [
-      "明显老化的前场明星球员",
-      "缺乏快速回追型后卫"
-    ],
-    "injuries": []
-  },
-  {
     "id": "portugal",
     "name": "葡萄牙",
     "code": "POR",
     "confederation": "UEFA",
-    "group": "G",
+    "group": "K",
     "elo": 2000,
     "coach": {
       "name": "罗伯托·马丁内斯",
@@ -2917,7 +1997,7 @@ export const initialTeams: FootballTeam[] = [
     "name": "瑞士",
     "code": "SUI",
     "confederation": "UEFA",
-    "group": "G",
+    "group": "B",
     "elo": 1890,
     "coach": {
       "name": "穆拉特·雅金",
@@ -3032,7 +2112,7 @@ export const initialTeams: FootballTeam[] = [
     "name": "加纳",
     "code": "GHA",
     "confederation": "CAF",
-    "group": "G",
+    "group": "L",
     "elo": 1720,
     "coach": {
       "name": "奥托·阿多",
@@ -3147,7 +2227,7 @@ export const initialTeams: FootballTeam[] = [
     "name": "巴拿马",
     "code": "PAN",
     "confederation": "CONCACAF",
-    "group": "G",
+    "group": "L",
     "elo": 1650,
     "coach": {
       "name": "托马斯·克里斯蒂安森",
@@ -3262,7 +2342,7 @@ export const initialTeams: FootballTeam[] = [
     "name": "荷兰",
     "code": "NED",
     "confederation": "UEFA",
-    "group": "H",
+    "group": "F",
     "elo": 1960,
     "coach": {
       "name": "罗纳德·科曼",
@@ -3377,7 +2457,7 @@ export const initialTeams: FootballTeam[] = [
     "name": "日本",
     "code": "JPN",
     "confederation": "AFC",
-    "group": "H",
+    "group": "F",
     "elo": 1860,
     "coach": {
       "name": "森保一",
@@ -3492,7 +2572,7 @@ export const initialTeams: FootballTeam[] = [
     "name": "突尼斯",
     "code": "TUN",
     "confederation": "CAF",
-    "group": "H",
+    "group": "F",
     "elo": 1700,
     "coach": {
       "name": "凯斯·雅库比",
@@ -3603,232 +2683,117 @@ export const initialTeams: FootballTeam[] = [
     "injuries": []
   },
   {
-    "id": "costa_rica",
-    "name": "哥斯达黎加",
-    "code": "CRC",
-    "confederation": "CONCACAF",
-    "group": "H",
-    "elo": 1670,
+    "id": "norway",
+    "name": "挪威",
+    "code": "NOR",
+    "confederation": "UEFA",
+    "group": "I",
+    "elo": 1815,
     "coach": {
-      "name": "克劳迪奥·维瓦斯",
-      "style": "极其深厚顽强的低位蹲坑五后卫，利用单点锋线爆发闪击冲刺",
-      "experienceYears": 14
+      "name": "斯塔勒·索尔巴肯",
+      "style": "高体能冲击，中路高空长传压制",
+      "experienceYears": 15
     },
     "ratings": {
-      "attack": 71,
-      "midfield": 70,
-      "defense": 72,
-      "benchDepth": 66,
-      "experience": 79
+      "attack": 88,
+      "midfield": 83,
+      "defense": 76,
+      "benchDepth": 74,
+      "experience": 75
     },
     "tactics": {
-      "possession": 37,
-      "pressing": 48,
-      "counterAttack": 83,
-      "defenseLine": 35,
-      "physicality": 77,
-      "setPiece": 72,
-      "preferredFormation": "5-4-1"
+      "possession": 50,
+      "pressing": 75,
+      "counterAttack": 84,
+      "defenseLine": 63,
+      "physicality": 82,
+      "setPiece": 79,
+      "preferredFormation": "4-3-3"
     },
     "keyPlayers": [
       {
-        "name": "曼弗德·乌加尔德",
-        "club": "莫斯科斯巴达",
+        "name": "埃尔林·哈兰德",
+        "club": "曼城",
+        "rating": 91,
+        "role": "FWD",
+        "status": "Healthy"
+      },
+      {
+        "name": "马丁·厄德高",
+        "club": "阿森纳",
+        "rating": 89,
+        "role": "MID",
+        "status": "Healthy"
+      },
+      {
+        "name": "亚历山大·瑟洛特",
+        "club": "马德里竞技",
+        "rating": 83,
+        "role": "FWD",
+        "status": "Healthy"
+      },
+      {
+        "name": "奥斯卡·鲍勃",
+        "club": "曼城",
+        "rating": 80,
+        "role": "MID",
+        "status": "Healthy"
+      },
+      {
+        "name": "朱利安·雷尔森",
+        "club": "多特蒙德",
+        "rating": 81,
+        "role": "DEF",
+        "status": "Healthy"
+      },
+      {
+        "name": "利奥·奥斯蒂高",
+        "club": "雷恩",
+        "rating": 78,
+        "role": "DEF",
+        "status": "Healthy"
+      },
+      {
+        "name": "安东尼奥·努萨",
+        "club": "莱比锡红牛",
         "rating": 79,
         "role": "FWD",
         "status": "Healthy"
       },
       {
-        "name": "弗朗西斯科·卡尔沃",
-        "club": "华雷斯",
-        "rating": 75,
-        "role": "DEF",
-        "status": "Healthy"
-      },
-      {
-        "name": "乔尔·坎贝尔",
-        "club": "阿拉胡埃伦斯",
-        "rating": 74,
-        "role": "FWD",
-        "status": "Healthy"
-      },
-      {
-        "name": "帕特里克·塞奎拉",
-        "club": "卡萨皮亚",
-        "rating": 71,
+        "name": "奥尔扬·尼兰德",
+        "club": "塞维利亚",
+        "rating": 77,
         "role": "GK",
-        "status": "Healthy"
-      },
-      {
-        "name": "胡安·巴勃罗·巴尔加斯",
-        "club": "百万富翁",
-        "rating": 71,
-        "role": "DEF",
-        "status": "Healthy"
-      },
-      {
-        "name": "杰兰·米切尔",
-        "club": "费耶诺德",
-        "rating": 72,
-        "role": "DEF",
-        "status": "Healthy"
-      },
-      {
-        "name": "布兰登·阿奎莱拉",
-        "club": "里奥阿维",
-        "rating": 70,
-        "role": "MID",
-        "status": "Healthy"
-      },
-      {
-        "name": "阿尔瓦罗·萨莫拉",
-        "club": "阿里斯",
-        "rating": 69,
-        "role": "FWD",
         "status": "Healthy"
       }
     ],
     "recentForm": [
       {
-        "opponent": "洪都拉斯",
-        "score": "3 - 1",
-        "xg": "1.9 - 1.1",
-        "date": "2026-03-23",
-        "type": "Qualifier",
-        "outcome": "W"
-      },
-      {
-        "opponent": "阿根廷",
-        "score": "1 - 3",
-        "xg": "0.8 - 3.1",
-        "date": "2026-03-27",
-        "type": "Friendly",
-        "outcome": "L"
-      }
-    ],
-    "strengths": [
-      "曼弗德·乌加尔德的高强度逼抢",
-      "历史上出色的杯赛韧性",
-      "顽固的五后卫防线封堵"
-    ],
-    "weaknesses": [
-      "攻防转换中极低的传球准星",
-      "防守型边后卫的老龄化指标"
-    ],
-    "injuries": []
-  },
-  {
-    "id": "italy",
-    "name": "意大利",
-    "code": "ITA",
-    "confederation": "UEFA",
-    "group": "I",
-    "elo": 1950,
-    "coach": {
-      "name": "卢西亚诺·斯帕莱蒂",
-      "style": "中前场高压控球渗透，极高频反抢阻圈",
-      "experienceYears": 25
-    },
-    "ratings": {
-      "attack": 82,
-      "midfield": 88,
-      "defense": 89,
-      "benchDepth": 86,
-      "experience": 82
-    },
-    "tactics": {
-      "possession": 60,
-      "pressing": 82,
-      "counterAttack": 79,
-      "defenseLine": 62,
-      "physicality": 80,
-      "setPiece": 78,
-      "preferredFormation": "3-4-2-1"
-    },
-    "keyPlayers": [
-      {
-        "name": "尼科洛·巴雷拉",
-        "club": "Inter Milan",
-        "rating": 89,
-        "role": "MID",
-        "status": "Healthy"
-      },
-      {
-        "name": "亚历山德罗·巴斯托尼",
-        "club": "Inter Milan",
-        "rating": 88,
-        "role": "DEF",
-        "status": "Healthy"
-      },
-      {
-        "name": "詹路易吉·多纳鲁马",
-        "club": "巴黎圣日耳曼",
-        "rating": 89,
-        "role": "GK",
-        "status": "Healthy"
-      },
-      {
-        "name": "古列尔莫·维卡里奥",
-        "club": "热刺",
-        "rating": 84,
-        "role": "GK",
-        "status": "Healthy"
-      },
-      {
-        "name": "费代里科·迪马尔科",
-        "club": "国际米兰",
-        "rating": 86,
-        "role": "DEF",
-        "status": "Healthy"
-      },
-      {
-        "name": "曼努埃尔·洛卡特利",
-        "club": "尤文图斯",
-        "rating": 82,
-        "role": "MID",
-        "status": "Healthy"
-      },
-      {
-        "name": "马特奥·雷特吉",
-        "club": "亚特兰大",
-        "rating": 81,
-        "role": "FWD",
-        "status": "Healthy"
-      },
-      {
-        "name": "若日尼奥",
-        "club": "阿森纳",
-        "rating": 80,
-        "role": "MID",
-        "status": "Healthy"
-      }
-    ],
-    "recentForm": [
-      {
-        "opponent": "委内瑞拉",
-        "score": "2 - 1",
-        "xg": "1.8 - 1.0",
+        "opponent": "斯洛伐克",
+        "score": "1 - 1",
+        "xg": "1.2 - 0.9",
         "date": "2026-03-21",
         "type": "Friendly",
-        "outcome": "W"
+        "outcome": "D"
       },
       {
-        "opponent": "厄瓜多尔",
-        "score": "2 - 0",
-        "xg": "1.4 - 0.8",
+        "opponent": "塞浦路斯",
+        "score": "3 - 0",
+        "xg": "2.4 - 0.3",
         "date": "2026-03-24",
         "type": "Friendly",
         "outcome": "W"
       }
     ],
     "strengths": [
-      "巴斯托尼顶级左路组织型后卫的防守与出球表现",
-      "巴雷拉极致的B2B（全能中场）引擎",
-      "世界级的门将屏障作用"
+      "哈兰德无与伦比的门前终结能力",
+      "厄德高的前场组织和致命直塞",
+      "英超与德甲主力班底带来的高对抗性"
     ],
     "weaknesses": [
-      "缺乏冷酷无情的终结型中锋",
-      "边后卫防守节奏失误"
+      "后防线在高水平比赛中缺乏顶级稳定性",
+      "常规板凳深度相对有限，过度依赖球星发挥"
     ],
     "injuries": []
   },
@@ -3952,7 +2917,7 @@ export const initialTeams: FootballTeam[] = [
     "name": "土耳其",
     "code": "TUR",
     "confederation": "UEFA",
-    "group": "I",
+    "group": "D",
     "elo": 1805,
     "coach": {
       "name": "温琴佐·蒙特拉",
@@ -4063,126 +3028,11 @@ export const initialTeams: FootballTeam[] = [
     "injuries": []
   },
   {
-    "id": "jamaica",
-    "name": "牙买加",
-    "code": "JAM",
-    "confederation": "CONCACAF",
-    "group": "I",
-    "elo": 1680,
-    "coach": {
-      "name": "史蒂夫·麦克拉伦",
-      "style": "直接大长传飞快两边锋突刺，低位并蹲坑双主力腰后撤",
-      "experienceYears": 24
-    },
-    "ratings": {
-      "attack": 80,
-      "midfield": 70,
-      "defense": 69,
-      "benchDepth": 67,
-      "experience": 71
-    },
-    "tactics": {
-      "possession": 41,
-      "pressing": 58,
-      "counterAttack": 91,
-      "defenseLine": 42,
-      "physicality": 83,
-      "setPiece": 76,
-      "preferredFormation": "4-4-2"
-    },
-    "keyPlayers": [
-      {
-        "name": "利昂·贝利",
-        "club": "阿斯顿维拉",
-        "rating": 83,
-        "role": "FWD",
-        "status": "Healthy"
-      },
-      {
-        "name": "米查尔·安东尼奥",
-        "club": "西汉姆联",
-        "rating": 78,
-        "role": "FWD",
-        "status": "Healthy"
-      },
-      {
-        "name": "德马莱·格雷",
-        "club": "Al Ettifaq",
-        "rating": 78,
-        "role": "FWD",
-        "status": "Healthy"
-      },
-      {
-        "name": "安德烈·布莱克",
-        "club": "费城联合",
-        "rating": 74,
-        "role": "GK",
-        "status": "Healthy"
-      },
-      {
-        "name": "伊森·平诺克",
-        "club": "布伦特福德",
-        "rating": 77,
-        "role": "DEF",
-        "status": "Healthy"
-      },
-      {
-        "name": "鲍比·德科多瓦-里德",
-        "club": "莱斯特城",
-        "rating": 74,
-        "role": "MID",
-        "status": "Healthy"
-      },
-      {
-        "name": "凯塞·帕尔默",
-        "club": "赫尔城",
-        "rating": 71,
-        "role": "MID",
-        "status": "Healthy"
-      },
-      {
-        "name": "沙马尔·尼科尔森",
-        "club": "莫斯科斯巴达",
-        "rating": 72,
-        "role": "FWD",
-        "status": "Healthy"
-      }
-    ],
-    "recentForm": [
-      {
-        "opponent": "美国",
-        "score": "1 - 3",
-        "xg": "1.0 - 2.4",
-        "date": "2026-03-21",
-        "type": "Qualifier",
-        "outcome": "L"
-      },
-      {
-        "opponent": "巴拿马",
-        "score": "1 - 0",
-        "xg": "1.2 - 1.1",
-        "date": "2026-03-24",
-        "type": "Qualifier",
-        "outcome": "W"
-      }
-    ],
-    "strengths": [
-      "贝利带来的毁灭性反击节奏",
-      "米查尔·安东尼奥在身体对抗中的统治力",
-      "极快的攻防转换节奏"
-    ],
-    "weaknesses": [
-      "深处低位的中场出球运转局限性",
-      "防守结构在造越位战术中投入过度"
-    ],
-    "injuries": []
-  },
-  {
     "id": "germany",
     "name": "德国",
     "code": "GER",
     "confederation": "UEFA",
-    "group": "J",
+    "group": "E",
     "elo": 1980,
     "coach": {
       "name": "朱利安·纳格尔斯曼",
@@ -4297,7 +3147,7 @@ export const initialTeams: FootballTeam[] = [
     "name": "乌拉圭",
     "code": "URU",
     "confederation": "CONMEBOL",
-    "group": "J",
+    "group": "H",
     "elo": 1940,
     "coach": {
       "name": "马塞洛·贝尔萨",
@@ -4527,7 +3377,7 @@ export const initialTeams: FootballTeam[] = [
     "name": "澳大利亚",
     "code": "AUS",
     "confederation": "AFC",
-    "group": "J",
+    "group": "D",
     "elo": 1725,
     "coach": {
       "name": "托尼·波波维奇",
@@ -4642,7 +3492,7 @@ export const initialTeams: FootballTeam[] = [
     "name": "巴西",
     "code": "BRA",
     "confederation": "CONMEBOL",
-    "group": "K",
+    "group": "C",
     "elo": 2050,
     "coach": {
       "name": "多里瓦尔·儒尼奥尔",
@@ -4762,126 +3612,11 @@ export const initialTeams: FootballTeam[] = [
     ]
   },
   {
-    "id": "denmark",
-    "name": "丹麦",
-    "code": "DEN",
-    "confederation": "UEFA",
-    "group": "K",
-    "elo": 1875,
-    "coach": {
-      "name": "拉尔斯·克努森",
-      "style": "战术对称三线平衡对称攻防，动态极强传中起球体系",
-      "experienceYears": 10
-    },
-    "ratings": {
-      "attack": 81,
-      "midfield": 84,
-      "defense": 83,
-      "benchDepth": 81,
-      "experience": 88
-    },
-    "tactics": {
-      "possession": 54,
-      "pressing": 68,
-      "counterAttack": 79,
-      "defenseLine": 50,
-      "physicality": 82,
-      "setPiece": 83,
-      "preferredFormation": "3-4-2-1"
-    },
-    "keyPlayers": [
-      {
-        "name": "拉斯穆斯·霍伊伦",
-        "club": "Manchester United",
-        "rating": 83,
-        "role": "FWD",
-        "status": "Healthy"
-      },
-      {
-        "name": "克里斯蒂安·埃里克森",
-        "club": "Manchester United",
-        "rating": 82,
-        "role": "MID",
-        "status": "Healthy"
-      },
-      {
-        "name": "皮埃尔-埃米尔·霍伊别尔",
-        "club": "Marseille",
-        "rating": 83,
-        "role": "MID",
-        "status": "Healthy"
-      },
-      {
-        "name": "卡斯帕·舒梅切尔",
-        "club": "凯尔特人",
-        "rating": 77,
-        "role": "GK",
-        "status": "Healthy"
-      },
-      {
-        "name": "约阿希姆·安德森",
-        "club": "富勒姆",
-        "rating": 80,
-        "role": "DEF",
-        "status": "Healthy"
-      },
-      {
-        "name": "维克托·内尔森",
-        "club": "加拉塔萨雷",
-        "rating": 77,
-        "role": "DEF",
-        "status": "Healthy"
-      },
-      {
-        "name": "莫滕·尤尔曼德",
-        "club": "葡萄牙体育",
-        "rating": 80,
-        "role": "MID",
-        "status": "Healthy"
-      },
-      {
-        "name": "米克尔·达姆斯高",
-        "club": "布伦特福德",
-        "rating": 75,
-        "role": "MID",
-        "status": "Healthy"
-      }
-    ],
-    "recentForm": [
-      {
-        "opponent": "瑞士",
-        "score": "0 - 0",
-        "xg": "0.7 - 0.8",
-        "date": "2026-03-23",
-        "type": "Friendly",
-        "outcome": "D"
-      },
-      {
-        "opponent": "法罗群岛",
-        "score": "2 - 0",
-        "xg": "1.8 - 0.2",
-        "date": "2026-03-26",
-        "type": "Friendly",
-        "outcome": "W"
-      }
-    ],
-    "strengths": [
-      "埃里克森令人惊叹的定位球与传中视野",
-      "霍伊伦冲击空间的强硬跑位",
-      "战术纪律极强且高度统一的整体"
-    ],
-    "weaknesses": [
-      "面对深位横向反击时回防落位节奏较慢",
-      "攻防转换节奏较慢"
-    ],
-    "injuries": []
-  },
-  {
     "id": "cote_divoire",
     "name": "科特迪瓦",
     "code": "CIV",
     "confederation": "CAF",
-    "group": "K",
+    "group": "E",
     "elo": 1800,
     "coach": {
       "name": "埃梅尔塞·法埃",
@@ -4996,7 +3731,7 @@ export const initialTeams: FootballTeam[] = [
     "name": "伊拉克",
     "code": "IRQ",
     "confederation": "AFC",
-    "group": "K",
+    "group": "I",
     "elo": 1620,
     "coach": {
       "name": "赫苏斯·卡萨斯",
@@ -5226,7 +3961,7 @@ export const initialTeams: FootballTeam[] = [
     "name": "沙特阿拉伯",
     "code": "KSA",
     "confederation": "AFC",
-    "group": "L",
+    "group": "H",
     "elo": 1710,
     "coach": {
       "name": "埃尔韦·雷纳尔",
@@ -5341,7 +4076,7 @@ export const initialTeams: FootballTeam[] = [
     "name": "摩洛哥",
     "code": "MAR",
     "confederation": "CAF",
-    "group": "L",
+    "group": "C",
     "elo": 1920,
     "coach": {
       "name": "瓦利德·雷格拉吉",
@@ -5456,7 +4191,7 @@ export const initialTeams: FootballTeam[] = [
     "name": "乌兹别克斯坦",
     "code": "UZB",
     "confederation": "AFC",
-    "group": "L",
+    "group": "K",
     "elo": 1680,
     "coach": {
       "name": "斯雷奇科·卡塔内茨",
@@ -5565,6 +4300,1030 @@ export const initialTeams: FootballTeam[] = [
       "边路防区在面临高速横向转移和大范围斜拉时偶有盯人失锁"
     ],
     "injuries": []
+  },
+  {
+    "id": "czech_republic",
+    "name": "捷克",
+    "code": "CZE",
+    "confederation": "UEFA",
+    "elo": 1720,
+    "coach": {
+      "name": "伊万·哈谢克",
+      "style": "中后场前压传导，直塞肋部切入",
+      "experienceYears": 20
+    },
+    "ratings": {
+      "attack": 79,
+      "midfield": 78,
+      "defense": 77,
+      "benchDepth": 75,
+      "experience": 78
+    },
+    "tactics": {
+      "possession": 51,
+      "pressing": 76,
+      "counterAttack": 79,
+      "defenseLine": 62,
+      "physicality": 82,
+      "setPiece": 80,
+      "preferredFormation": "3-4-1-2"
+    },
+    "keyPlayers": [
+      {
+        "name": "托马斯·绍切克",
+        "club": "西汉姆联",
+        "rating": 83,
+        "role": "MID",
+        "status": "Healthy"
+      },
+      {
+        "name": "帕特里克·希克",
+        "club": "勒沃库森",
+        "rating": 82,
+        "role": "FWD",
+        "status": "Healthy"
+      },
+      {
+        "name": "拉吉斯拉夫·克雷伊奇",
+        "club": "赫罗纳",
+        "rating": 79,
+        "role": "DEF",
+        "status": "Healthy"
+      },
+      {
+        "name": "弗拉基米尔·曹法尔",
+        "club": "西汉姆联",
+        "rating": 78,
+        "role": "DEF",
+        "status": "Healthy"
+      },
+      {
+        "name": "亚当·赫洛热克",
+        "club": "霍芬海姆",
+        "rating": 78,
+        "role": "FWD",
+        "status": "Healthy"
+      },
+      {
+        "name": "延德日赫·斯塔涅克",
+        "club": "布拉格斯拉维亚",
+        "rating": 78,
+        "role": "GK",
+        "status": "Healthy"
+      }
+    ],
+    "recentForm": [
+      {
+        "opponent": "北马其顿",
+        "score": "2 - 1",
+        "xg": "1.9 - 0.7",
+        "date": "2026-03-22",
+        "type": "Friendly",
+        "outcome": "W"
+      },
+      {
+        "opponent": "马耳他",
+        "score": "7 - 1",
+        "xg": "4.2 - 0.3",
+        "date": "2026-03-25",
+        "type": "Friendly",
+        "outcome": "W"
+      }
+    ],
+    "strengths": [
+      "绍切克坐镇中场的强悍防守拦截与后插高空争顶威胁",
+      "前锋希克极强的门前嗅觉和世界波终结能力",
+      "高对抗性、强悍的身体素质与高水准定位球攻防"
+    ],
+    "weaknesses": [
+      "阵地战中缺乏顶级的创意型中场组织者",
+      "面对高频、灵巧的小快灵突防时，后防跟人吃力"
+    ],
+    "injuries": [],
+    "group": "A"
+  },
+  {
+    "id": "qatar",
+    "name": "卡塔尔",
+    "code": "QAT",
+    "confederation": "AFC",
+    "elo": 1680,
+    "coach": {
+      "name": "丁丁·马克斯",
+      "style": "注重守门防反，双前锋快攻穿穿插",
+      "experienceYears": 18
+    },
+    "ratings": {
+      "attack": 78,
+      "midfield": 73,
+      "defense": 72,
+      "benchDepth": 70,
+      "experience": 74
+    },
+    "tactics": {
+      "possession": 47,
+      "pressing": 68,
+      "counterAttack": 84,
+      "defenseLine": 55,
+      "physicality": 73,
+      "setPiece": 75,
+      "preferredFormation": "3-5-2"
+    },
+    "keyPlayers": [
+      {
+        "name": "阿克拉姆·阿菲夫",
+        "club": "萨德",
+        "rating": 81,
+        "role": "FWD",
+        "status": "Healthy"
+      },
+      {
+        "name": "阿尔莫伊兹·阿里",
+        "club": "杜海勒",
+        "rating": 78,
+        "role": "FWD",
+        "status": "Healthy"
+      },
+      {
+        "name": "哈桑·海多斯",
+        "club": "萨德",
+        "rating": 74,
+        "role": "MID",
+        "status": "Healthy"
+      },
+      {
+        "name": "米沙勒·巴尔沙姆",
+        "club": "萨德",
+        "rating": 75,
+        "role": "GK",
+        "status": "Healthy"
+      }
+    ],
+    "recentForm": [
+      {
+        "opponent": "科威特",
+        "score": "3 - 0",
+        "xg": "2.1 - 0.5",
+        "date": "2026-03-21",
+        "type": "Qualifier",
+        "outcome": "W"
+      },
+      {
+        "opponent": "科威特",
+        "score": "2 - 1",
+        "xg": "1.6 - 0.8",
+        "date": "2026-03-26",
+        "type": "Qualifier",
+        "outcome": "W"
+      }
+    ],
+    "strengths": [
+      "阿菲夫无与伦比的前场牵扯与极具杀伤力的横传弧线",
+      "拥有极高的亚洲杯封王大赛韧性和默契度",
+      "防守反击中的极致速度与两翼快速拉边能力"
+    ],
+    "weaknesses": [
+      "面对欧美高体能、高对抗的强力逼抢时容易后场断电",
+      "防线高度不足，防空空战常处于绝对劣势"
+    ],
+    "injuries": [],
+    "group": "B"
+  },
+  {
+    "id": "bosnia",
+    "name": "波黑",
+    "code": "BIH",
+    "confederation": "UEFA",
+    "elo": 1590,
+    "coach": {
+      "name": "谢尔盖·巴尔巴雷茨",
+      "style": "古典力量型站位，双翼斜传抢点",
+      "experienceYears": 10
+    },
+    "ratings": {
+      "attack": 76,
+      "midfield": 74,
+      "defense": 73,
+      "benchDepth": 71,
+      "experience": 75
+    },
+    "tactics": {
+      "possession": 48,
+      "pressing": 70,
+      "counterAttack": 78,
+      "defenseLine": 58,
+      "physicality": 83,
+      "setPiece": 79,
+      "preferredFormation": "3-5-2"
+    },
+    "keyPlayers": [
+      {
+        "name": "埃尔梅丁·德米罗维奇",
+        "club": "斯图加特",
+        "rating": 81,
+        "role": "FWD",
+        "status": "Healthy"
+      },
+      {
+        "name": "阿尔马尔·德迪奇",
+        "club": "萨尔茨堡红牛",
+        "rating": 79,
+        "role": "DEF",
+        "status": "Healthy"
+      },
+      {
+        "name": "塞亚德·科拉希纳茨",
+        "club": "亚特兰大",
+        "rating": 78,
+        "role": "DEF",
+        "status": "Healthy"
+      },
+      {
+        "name": "埃丁·哲科",
+        "club": "费内巴切",
+        "rating": 80,
+        "role": "FWD",
+        "status": "Healthy"
+      },
+      {
+        "name": "尼古拉·瓦西里",
+        "club": "圣保利",
+        "rating": 74,
+        "role": "GK",
+        "status": "Healthy"
+      }
+    ],
+    "recentForm": [
+      {
+        "opponent": "乌克兰",
+        "score": "1 - 2",
+        "xg": "1.1 - 1.4",
+        "date": "2026-03-21",
+        "type": "Qualifier",
+        "outcome": "L"
+      },
+      {
+        "opponent": "芬兰",
+        "score": "2 - 0",
+        "xg": "1.7 - 0.6",
+        "date": "2026-03-25",
+        "type": "Friendly",
+        "outcome": "W"
+      }
+    ],
+    "strengths": [
+      "德米罗维奇锋线全面压迫，哲科宝刀不老的门前终结与支点作用",
+      "科拉希纳茨与德迪奇领衔的硬桥硬马式身体推进力",
+      "高大防空优势和非常熟练的二点抢射"
+    ],
+    "weaknesses": [
+      "中后防转身较慢，在对抗敏捷型高控球队时易丢位置",
+      "节奏转换适应较差，被快攻突防时易慌乱"
+    ],
+    "injuries": [],
+    "group": "B"
+  },
+  {
+    "id": "scotland",
+    "name": "苏格兰",
+    "code": "SCO",
+    "confederation": "UEFA",
+    "elo": 1715,
+    "coach": {
+      "name": "史蒂夫·克拉克",
+      "style": "铁血防守，精妙定位球与高空球斜吊",
+      "experienceYears": 22
+    },
+    "ratings": {
+      "attack": 75,
+      "midfield": 80,
+      "defense": 78,
+      "benchDepth": 76,
+      "experience": 78
+    },
+    "tactics": {
+      "possession": 49,
+      "pressing": 78,
+      "counterAttack": 81,
+      "defenseLine": 56,
+      "physicality": 85,
+      "setPiece": 83,
+      "preferredFormation": "5-4-1"
+    },
+    "keyPlayers": [
+      {
+        "name": "安德鲁·罗伯逊",
+        "club": "利物浦",
+        "rating": 85,
+        "role": "DEF",
+        "status": "Healthy"
+      },
+      {
+        "name": "约翰·麦金",
+        "club": "阿斯顿维拉",
+        "rating": 82,
+        "role": "MID",
+        "status": "Healthy"
+      },
+      {
+        "name": "斯科特·麦克托米奈",
+        "club": "那不勒斯",
+        "rating": 81,
+        "role": "MID",
+        "status": "Healthy"
+      },
+      {
+        "name": "比利·吉尔摩",
+        "club": "那不勒斯",
+        "rating": 78,
+        "role": "MID",
+        "status": "Healthy"
+      },
+      {
+        "name": "安格斯·冈恩",
+        "club": "诺里奇城",
+        "rating": 76,
+        "role": "GK",
+        "status": "Healthy"
+      }
+    ],
+    "recentForm": [
+      {
+        "opponent": "直布罗陀",
+        "score": "2 - 0",
+        "xg": "2.1 - 0.1",
+        "date": "2026-03-20",
+        "type": "Friendly",
+        "outcome": "W"
+      },
+      {
+        "opponent": "芬兰",
+        "score": "2 - 2",
+        "xg": "1.4 - 1.2",
+        "date": "2026-03-24",
+        "type": "Friendly",
+        "outcome": "D"
+      }
+    ],
+    "strengths": [
+      "麦克托米奈惊人的禁区内无球跑动与插上得分效率",
+      "罗伯逊在左边路具备世界一档的传中与狂野奔突推进",
+      "极其高耸的三中卫以及麦金的超强底盘做球"
+    ],
+    "weaknesses": [
+      "单箭头终结效率一般，长期缺乏超级前锋射手",
+      "防区退守到低位时，肋部斜线区域有时空档较多"
+    ],
+    "injuries": [],
+    "group": "C"
+  },
+  {
+    "id": "haiti",
+    "name": "海地",
+    "code": "HAI",
+    "confederation": "CONCACAF",
+    "elo": 1450,
+    "coach": {
+      "name": "塞巴斯蒂安·米尼奥",
+      "style": "极致边路爆发，前场单兵高空对撞",
+      "experienceYears": 12
+    },
+    "ratings": {
+      "attack": 71,
+      "midfield": 68,
+      "defense": 67,
+      "benchDepth": 65,
+      "experience": 64
+    },
+    "tactics": {
+      "possession": 45,
+      "pressing": 72,
+      "counterAttack": 83,
+      "defenseLine": 54,
+      "physicality": 80,
+      "setPiece": 72,
+      "preferredFormation": "4-4-2"
+    },
+    "keyPlayers": [
+      {
+        "name": "弗朗茨迪·皮埃罗",
+        "club": "雅典AEK",
+        "rating": 74,
+        "role": "FWD",
+        "status": "Healthy"
+      },
+      {
+        "name": "达肯斯·纳宗",
+        "club": "凯里尼亚",
+        "rating": 72,
+        "role": "FWD",
+        "status": "Healthy"
+      },
+      {
+        "name": "卡尔·弗雷德·圣安德烈",
+        "club": "昂热",
+        "rating": 71,
+        "role": "DEF",
+        "status": "Healthy"
+      },
+      {
+        "name": "约翰尼·普拉西德",
+        "club": "巴斯蒂亚",
+        "rating": 70,
+        "role": "GK",
+        "status": "Healthy"
+      }
+    ],
+    "recentForm": [
+      {
+        "opponent": "圣卢西亚",
+        "score": "2 - 1",
+        "xg": "1.6 - 0.7",
+        "date": "2026-03-21",
+        "type": "Qualifier",
+        "outcome": "W"
+      },
+      {
+        "opponent": "巴巴多斯",
+        "score": "3 - 1",
+        "xg": "2.2 - 0.6",
+        "date": "2026-03-25",
+        "type": "Qualifier",
+        "outcome": "W"
+      }
+    ],
+    "strengths": [
+      "前场皮埃罗等前锋拥有一流的硬顶和空战终结身体素质",
+      "反击两翼冲击速度奇快，单兵冲开防线能力较强"
+    ],
+    "weaknesses": [
+      "传控防线传导技术糙，后卫容易在高位受阻导致直接被断球",
+      "下半场体能严重消耗时，战术纪律跟防容易形同虚设"
+    ],
+    "injuries": [],
+    "group": "C"
+  },
+  {
+    "id": "paraguay",
+    "name": "巴拉圭",
+    "code": "PAR",
+    "confederation": "CONMEBOL",
+    "elo": 1720,
+    "coach": {
+      "name": "古斯塔沃·阿尔法罗",
+      "style": "疯狗式疯狂拦截，无休止身体肉搏防反",
+      "experienceYears": 24
+    },
+    "ratings": {
+      "attack": 75,
+      "midfield": 77,
+      "defense": 81,
+      "benchDepth": 74,
+      "experience": 78
+    },
+    "tactics": {
+      "possession": 46,
+      "pressing": 85,
+      "counterAttack": 80,
+      "defenseLine": 50,
+      "physicality": 87,
+      "setPiece": 82,
+      "preferredFormation": "4-3-3"
+    },
+    "keyPlayers": [
+      {
+        "name": "米格尔·阿尔米隆",
+        "club": "纽卡斯尔联",
+        "rating": 80,
+        "role": "FWD",
+        "status": "Healthy"
+      },
+      {
+        "name": "胡里奥·恩西索",
+        "club": "布莱顿",
+        "rating": 79,
+        "role": "MID",
+        "status": "Healthy"
+      },
+      {
+        "name": "古斯塔沃·戈麦斯",
+        "club": "帕尔梅拉斯",
+        "rating": 79,
+        "role": "DEF",
+        "status": "Healthy"
+      },
+      {
+        "name": "奥马尔·阿尔德雷特",
+        "club": "赫塔费",
+        "rating": 78,
+        "role": "DEF",
+        "status": "Healthy"
+      },
+      {
+        "name": "托尼·萨纳夫里亚",
+        "club": "都灵",
+        "rating": 77,
+        "role": "FWD",
+        "status": "Healthy"
+      },
+      {
+        "name": "小迭戈·戈麦斯",
+        "club": "迈阿密国际",
+        "rating": 76,
+        "role": "MID",
+        "status": "Healthy"
+      },
+      {
+        "name": "加蒂托·费尔南德斯",
+        "club": "博塔弗戈",
+        "rating": 75,
+        "role": "GK",
+        "status": "Healthy"
+      }
+    ],
+    "recentForm": [
+      {
+        "opponent": "阿根廷",
+        "score": "2 - 1",
+        "xg": "1.2 - 1.5",
+        "date": "2026-03-21",
+        "type": "Qualifier",
+        "outcome": "W"
+      },
+      {
+        "opponent": "玻利维亚",
+        "score": "2 - 2",
+        "xg": "1.4 - 1.9",
+        "date": "2026-03-26",
+        "type": "Qualifier",
+        "outcome": "D"
+      }
+    ],
+    "strengths": [
+      "极其顽固的南美铁血防守线，依靠极强肉搏直接锁死对方空间",
+      "阿尔米隆与恩西索惊艳的局部加速爆破与远射偷袭技术",
+      "极其扎实的定位球头球砸门硬实力"
+    ],
+    "weaknesses": [
+      "推进及出海能力不足，全靠零星前场连线与死搅蛮缠",
+      "容易在客场战局打不开时由于防守过载染红犯规"
+    ],
+    "injuries": [],
+    "group": "D"
+  },
+  {
+    "id": "curacao",
+    "name": "库拉索",
+    "code": "CUW",
+    "confederation": "CONCACAF",
+    "elo": 1440,
+    "coach": {
+      "name": "迪克·艾德沃卡特",
+      "style": "荷兰式传接框架，快速前插突破",
+      "experienceYears": 35
+    },
+    "ratings": {
+      "attack": 70,
+      "midfield": 72,
+      "defense": 69,
+      "benchDepth": 66,
+      "experience": 71
+    },
+    "tactics": {
+      "possession": 50,
+      "pressing": 70,
+      "counterAttack": 79,
+      "defenseLine": 58,
+      "physicality": 76,
+      "setPiece": 71,
+      "preferredFormation": "4-3-3"
+    },
+    "keyPlayers": [
+      {
+        "name": "尤尼尼奥·巴库纳",
+        "club": "伯明翰",
+        "rating": 72,
+        "role": "MID",
+        "status": "Healthy"
+      },
+      {
+        "name": "莱安德罗·巴库纳",
+        "club": "格罗宁根",
+        "rating": 71,
+        "role": "MID",
+        "status": "Healthy"
+      },
+      {
+        "name": "尤尔根·洛卡迪亚",
+        "club": "自由身",
+        "rating": 72,
+        "role": "FWD",
+        "status": "Healthy"
+      },
+      {
+        "name": "埃洛伊·鲁姆",
+        "club": "维特斯",
+        "rating": 72,
+        "role": "GK",
+        "status": "Healthy"
+      }
+    ],
+    "recentForm": [
+      {
+        "opponent": "巴巴多斯",
+        "score": "4 - 1",
+        "xg": "2.4 - 0.4",
+        "date": "2026-03-21",
+        "type": "Qualifier",
+        "outcome": "W"
+      },
+      {
+        "opponent": "阿鲁巴",
+        "score": "2 - 0",
+        "xg": "1.8 - 0.3",
+        "date": "2026-03-25",
+        "type": "Qualifier",
+        "outcome": "W"
+      }
+    ],
+    "strengths": [
+      "荷兰青训体系出身的骨干中场带来扎实的技术控制力",
+      "艾德沃卡特无上丰富的老辣战术调试指挥"
+    ],
+    "weaknesses": [
+      "主力阵容平均年龄偏大，在对抗超高压的强队时难以持续防守",
+      "后置防守轮换名单和实力档次参差不齐"
+    ],
+    "injuries": [],
+    "group": "E"
+  },
+  {
+    "id": "cape_verde",
+    "name": "佛得角",
+    "code": "CPV",
+    "confederation": "CAF",
+    "elo": 1560,
+    "coach": {
+      "name": "佩德罗·布比斯塔",
+      "style": "强力绞杀与高频率由守转攻",
+      "experienceYears": 10
+    },
+    "ratings": {
+      "attack": 74,
+      "midfield": 73,
+      "defense": 75,
+      "benchDepth": 70,
+      "experience": 73
+    },
+    "tactics": {
+      "possession": 46,
+      "pressing": 78,
+      "counterAttack": 85,
+      "defenseLine": 53,
+      "physicality": 81,
+      "setPiece": 74,
+      "preferredFormation": "4-3-3"
+    },
+    "keyPlayers": [
+      {
+        "name": "洛根·科斯塔",
+        "club": "比利亚雷亚尔",
+        "rating": 77,
+        "role": "DEF",
+        "status": "Healthy"
+      },
+      {
+        "name": "瑞安·门德斯",
+        "club": "纳斯尔",
+        "rating": 73,
+        "role": "FWD",
+        "status": "Healthy"
+      },
+      {
+        "name": "贾米罗·蒙泰罗",
+        "club": "自由身",
+        "rating": 72,
+        "role": "MID",
+        "status": "Healthy"
+      },
+      {
+        "name": "帕特里克·安德拉德",
+        "club": "卡拉巴赫",
+        "rating": 71,
+        "role": "MID",
+        "status": "Healthy"
+      },
+      {
+        "name": "沃齐尼亚",
+        "club": "自由身",
+        "rating": 69,
+        "role": "GK",
+        "status": "Healthy"
+      }
+    ],
+    "recentForm": [
+      {
+        "opponent": "安哥拉",
+        "score": "1 - 0",
+        "xg": "1.2 - 0.9",
+        "date": "2026-03-21",
+        "type": "Qualifier",
+        "outcome": "W"
+      },
+      {
+        "opponent": "毛里求斯",
+        "score": "2 - 1",
+        "xg": "1.6 - 0.5",
+        "date": "2026-03-25",
+        "type": "Qualifier",
+        "outcome": "W"
+      }
+    ],
+    "strengths": [
+      "洛根·科斯塔极强的高空防守防突控制力及豪门关注的水准",
+      "极其出色的非国杯大赛黑马气魄与疯狂的围剿跑动"
+    ],
+    "weaknesses": [
+      "面对密集防区敲门破防办法奇缺，极其依赖锋线自主突破",
+      "门将守线容易在高空传中拦截出击时出现致命失误"
+    ],
+    "injuries": [],
+    "group": "H"
+  },
+  {
+    "id": "austria",
+    "name": "奥地利",
+    "code": "AUT",
+    "confederation": "UEFA",
+    "elo": 1845,
+    "coach": {
+      "name": "拉尔夫·朗尼克",
+      "style": "窒息式红牛精神，极限前场红区围抢",
+      "experienceYears": 28
+    },
+    "ratings": {
+      "attack": 81,
+      "midfield": 83,
+      "defense": 80,
+      "benchDepth": 79,
+      "experience": 82
+    },
+    "tactics": {
+      "possession": 53,
+      "pressing": 90,
+      "counterAttack": 85,
+      "defenseLine": 72,
+      "physicality": 83,
+      "setPiece": 81,
+      "preferredFormation": "4-2-3-1"
+    },
+    "keyPlayers": [
+      {
+        "name": "戴维·阿拉巴",
+        "club": "皇家马德里",
+        "rating": 86,
+        "role": "DEF",
+        "status": "Healthy"
+      },
+      {
+        "name": "马塞尔·萨比策",
+        "club": "多特蒙德",
+        "rating": 83,
+        "role": "MID",
+        "status": "Healthy"
+      },
+      {
+        "name": "康拉德·莱默尔",
+        "club": "拜仁慕尼黑",
+        "rating": 82,
+        "role": "MID",
+        "status": "Healthy"
+      },
+      {
+        "name": "克里斯托夫·鲍姆加特纳",
+        "club": "莱比锡红牛",
+        "rating": 81,
+        "role": "MID",
+        "status": "Healthy"
+      },
+      {
+        "name": "迈克尔·格雷戈里奇",
+        "club": "弗赖堡",
+        "rating": 79,
+        "role": "FWD",
+        "status": "Healthy"
+      },
+      {
+        "name": "亚历山大·施拉格尔",
+        "club": "萨尔茨堡红牛",
+        "rating": 78,
+        "role": "GK",
+        "status": "Healthy"
+      }
+    ],
+    "recentForm": [
+      {
+        "opponent": "哈萨克斯坦",
+        "score": "2 - 0",
+        "xg": "1.8 - 0.4",
+        "date": "2026-03-21",
+        "type": "Qualifier",
+        "outcome": "W"
+      },
+      {
+        "opponent": "斯洛文尼亚",
+        "score": "1 - 1",
+        "xg": "1.3 - 0.9",
+        "date": "2026-03-24",
+        "type": "Qualifier",
+        "outcome": "D"
+      }
+    ],
+    "strengths": [
+      "朗尼克最原汁原味的高位逼抢狂飙冲击与就地转换突袭",
+      "萨比策与莱默尔堪称铁肺的多维跑位和逼抢屏障",
+      "阿拉巴极其全面的后防控球出球组织与领袖才干"
+    ],
+    "weaknesses": [
+      "极其高频率的高压跑动和高位防线，后方留下的空挡会被世界级强队一剑封喉",
+      "在阿拉巴刚刚伤愈时，防线的最高落点保护力会稍微有些打折扣"
+    ],
+    "injuries": [],
+    "group": "J"
+  },
+  {
+    "id": "jordan",
+    "name": "约旦",
+    "code": "JOR",
+    "confederation": "AFC",
+    "elo": 1580,
+    "coach": {
+      "name": "贾迈勒·塞拉米",
+      "style": "铁杆防反锁死，前场黄金铁三角狂飙闪击",
+      "experienceYears": 16
+    },
+    "ratings": {
+      "attack": 78,
+      "midfield": 72,
+      "defense": 74,
+      "benchDepth": 68,
+      "experience": 72
+    },
+    "tactics": {
+      "possession": 43,
+      "pressing": 74,
+      "counterAttack": 88,
+      "defenseLine": 52,
+      "physicality": 78,
+      "setPiece": 75,
+      "preferredFormation": "3-4-2-1"
+    },
+    "keyPlayers": [
+      {
+        "name": "穆萨·塔马里",
+        "club": "蒙彼利埃",
+        "rating": 79,
+        "role": "FWD",
+        "status": "Healthy"
+      },
+      {
+        "name": "亚赞·奈马特",
+        "club": "多哈国民",
+        "rating": 76,
+        "role": "FWD",
+        "status": "Healthy"
+      },
+      {
+        "name": "阿里·奥尔万",
+        "club": "塞拉莱",
+        "rating": 71,
+        "role": "FWD",
+        "status": "Healthy"
+      },
+      {
+        "name": "亚齐德·阿布·莱拉",
+        "club": "阿尔费萨里",
+        "rating": 72,
+        "role": "GK",
+        "status": "Healthy"
+      }
+    ],
+    "recentForm": [
+      {
+        "opponent": "巴基斯坦",
+        "score": "3 - 0",
+        "xg": "2.5 - 0.2",
+        "date": "2026-03-21",
+        "type": "Qualifier",
+        "outcome": "W"
+      },
+      {
+        "opponent": "巴基斯坦",
+        "score": "7 - 0",
+        "xg": "4.8 - 0.1",
+        "date": "2026-03-26",
+        "type": "Qualifier",
+        "outcome": "W"
+      }
+    ],
+    "strengths": [
+      "塔马里冠绝亚洲的中路横向内切舞步和法甲主力级别的盘带破坏力",
+      "黄金铁三角在反击时的极致传跑和惊人的反扑冲击力",
+      "高昂的斗志和极高战术凝聚纪律性"
+    ],
+    "weaknesses": [
+      "除三名当红射手之外，板凳后备人员实力有些明显的断档",
+      "传控防守传导能力极其生涩，被紧逼时难以后场出球"
+    ],
+    "injuries": [],
+    "group": "J"
+  },
+  {
+    "id": "dr_congo",
+    "name": "刚果民主共和国",
+    "code": "COD",
+    "confederation": "CAF",
+    "elo": 1610,
+    "coach": {
+      "name": "塞巴斯蒂安·德萨布尔",
+      "style": "双后腰紧密盾牌，两翼起速传中碾压",
+      "experienceYears": 15
+    },
+    "ratings": {
+      "attack": 77,
+      "midfield": 74,
+      "defense": 75,
+      "benchDepth": 72,
+      "experience": 74
+    },
+    "tactics": {
+      "possession": 47,
+      "pressing": 76,
+      "counterAttack": 82,
+      "defenseLine": 55,
+      "physicality": 84,
+      "setPiece": 78,
+      "preferredFormation": "4-2-3-1"
+    },
+    "keyPlayers": [
+      {
+        "name": "昌塞尔·姆本巴",
+        "club": "马赛",
+        "rating": 80,
+        "role": "DEF",
+        "status": "Healthy"
+      },
+      {
+        "name": "约安·维萨",
+        "club": "布伦特福德",
+        "rating": 79,
+        "role": "FWD",
+        "status": "Healthy"
+      },
+      {
+        "name": "泰奥·邦贡达",
+        "club": "莫斯科斯巴达",
+        "rating": 76,
+        "role": "FWD",
+        "status": "Healthy"
+      },
+      {
+        "name": "迪米特里·贝尔托",
+        "club": "蒙彼利埃",
+        "rating": 74,
+        "role": "GK",
+        "status": "Healthy"
+      }
+    ],
+    "recentForm": [
+      {
+        "opponent": "塞内加尔",
+        "score": "1 - 1",
+        "xg": "1.2 - 1.2",
+        "date": "2026-03-21",
+        "type": "Qualifier",
+        "outcome": "D"
+      },
+      {
+        "opponent": "多哥",
+        "score": "1 - 0",
+        "xg": "1.4 - 0.7",
+        "date": "2026-03-25",
+        "type": "Qualifier",
+        "outcome": "W"
+      }
+    ],
+    "strengths": [
+      "姆本巴如同移动堡垒一般的硬朗防空能力和极强的禁区防线覆盖",
+      "维萨在英超锤炼出来的狂野体能与禁区前沿灵动穿攻射门手法",
+      "令人畏惧的边区冲击和极强身体冲撞卡位"
+    ],
+    "weaknesses": [
+      "在由守转攻、打不开攻势打法框架时，中场枢纽过渡略显急躁冒进",
+      "边路和长传组织跑位的第二落点控制常显不稳"
+    ],
+    "injuries": [],
+    "group": "K"
   }
 ];
 
