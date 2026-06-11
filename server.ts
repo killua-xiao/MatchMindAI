@@ -210,9 +210,58 @@ function simulateMatch(home: FootballTeam, away: FootballTeam, isKnockout: boole
   }
 
   // 4. Calculate Expected xG
-  // We model base ratings difference and raw Elo strength difference
-  const homeVal = (fHome.attackPower * 0.45 + fHome.midfieldPower * 0.35 + fHome.defensePower * 0.20) + (homeActiveElo - 1500) / 12 + homeTacticalBoost + home.ratings.experience * 0.05;
-  const awayVal = (fAway.attackPower * 0.45 + fAway.midfieldPower * 0.35 + fAway.defensePower * 0.20) + (awayActiveElo - 1500) / 12 + awayTacticalBoost + away.ratings.experience * 0.05;
+  // =========================================================================
+  // DYNAMIC PHYSICAL ENVIRONMENT AND STAGE VARIABLE MULTIPLIERS (Auto-Derived based on actual match settings)
+  // =========================================================================
+  
+  // A. Dynamic Altitude Mode (Calculated based on match group / host region)
+  // Mexican cities host groups A, E, H, J at altitudes of 1500m to 2240m.
+  let dynamicAltitudeMode = 0;
+  if (home.id === 'mex' || away.id === 'mex') {
+    dynamicAltitudeMode = 2.0; // Mexican high altitude mode (2200m)
+  } else if (['A', 'E', 'H', 'J'].includes(home.group) || ['A', 'E', 'H', 'J'].includes(away.group)) {
+    dynamicAltitudeMode = 1.5; // High altitude stadium
+  } else if (['D', 'G', 'K'].includes(home.group) || ['D', 'G', 'K'].includes(away.group)) {
+    dynamicAltitudeMode = 0.5; // Medium high altitude
+  }
+
+  // Altitude hypoxia deficit: high-pressing style loses stamina in thin air
+  let homeAltitudeDeficit = 0;
+  let awayAltitudeDeficit = 0;
+  if (dynamicAltitudeMode > 0) {
+    if (home.tactics.pressing > 75) homeAltitudeDeficit += (home.tactics.pressing - 70) * 0.45 * dynamicAltitudeMode;
+    if (away.tactics.pressing > 75) awayAltitudeDeficit += (away.tactics.pressing - 70) * 0.45 * dynamicAltitudeMode;
+    
+    // Compensation by bench depth or experience
+    homeAltitudeDeficit = Math.max(0, homeAltitudeDeficit - (home.ratings.benchDepth - 75) * 0.25);
+    awayAltitudeDeficit = Math.max(0, awayAltitudeDeficit - (away.ratings.benchDepth - 75) * 0.25);
+  }
+
+  // B. Dynamic Schedule Intensity Mode (Knockout stage density fatigue vs physical depth)
+  let homeIntensityFatigue = 0;
+  let awayIntensityFatigue = 0;
+  if (isKnockout) {
+    if (home.ratings.benchDepth < 78) homeIntensityFatigue += (78 - home.ratings.benchDepth) * 1.8;
+    if (away.ratings.benchDepth < 78) awayIntensityFatigue += (78 - away.ratings.benchDepth) * 1.8;
+  }
+
+  // C. Dynamic East Coast Joint Host acoustics fan boost
+  let dynamicHostBoostHome = 0;
+  let dynamicHostBoostAway = 0;
+  const hostsList = ['usa', 'mex', 'can'];
+  if (hostsList.includes(home.id)) {
+    dynamicHostBoostHome += 36; // +36 Elo power boost on home soil acoustics
+  } else if (hostsList.includes(away.id)) {
+    dynamicHostBoostAway += 12;
+  }
+
+  // Calculate adjusted values incorporating all dynamic environment indicators
+  const homeVal = (fHome.attackPower * 0.45 + fHome.midfieldPower * 0.35 + fHome.defensePower * 0.20) 
+                  + (homeActiveElo - homeAltitudeDeficit - homeIntensityFatigue + dynamicHostBoostHome - 1500) / 12 
+                  + homeTacticalBoost + home.ratings.experience * 0.05;
+  const awayVal = (fAway.attackPower * 0.45 + fAway.midfieldPower * 0.35 + fAway.defensePower * 0.20) 
+                  + (awayActiveElo - awayAltitudeDeficit - awayIntensityFatigue + dynamicHostBoostAway - 1500) / 12 
+                  + awayTacticalBoost + away.ratings.experience * 0.05;
 
   // Expected xG scoreline exponential comparison
   let expectedHomeXg = Math.max(0.3, 1.38 * Math.pow(10, (homeVal - awayVal) / 165));
@@ -367,45 +416,243 @@ app.get("/api/logs", (req, res) => {
   res.json({ success: true, data: systemLogs });
 });
 
-// Trigger mock data scraper
-app.post("/api/logs/crawl", (req, res) => {
-  const sources = ["FIFA Data Hub", "Opta Pro", "Understat xG", "Sky Sports Football", "CONMEBOL Media Feed"];
-  const selectedSource = sources[Math.floor(Math.random() * sources.length)];
-  const randomEvents = [
+// Trigger mock data scraper and dynamically mutate all 48 teams' information, injuries, ratings and world ELO!
+app.post("/api/logs/crawl", async (req, res) => {
+  const sources = [
+    "FIFA Data Hub (全球流)",
+    "Opta Pro 战术分析网关",
+    "Understat xG 终端",
+    "Transfermarkt 德转大名单源",
+    "Sky Sports 战报监测站",
+    "CONMEBOL 媒体整合源"
+  ];
+  
+  let updateCount = 0;
+  let injuryNewCount = 0;
+  let injuryRecoveredCount = 0;
+  let tacticsCount = 0;
+  let scoreAdjustCount = 0;
+  
+  // Keep track of some highlights of the updates to compose highly detailed logs
+  const highlights: string[] = [];
+  
+  // Real sports-medical injuries catalog
+  const injuryCatalog = [
+    { title: "足底筋膜炎急性充血 (Acute Plantar Fasciitis)", severity: "Low", defaultPct: 4 },
+    { title: "大腿后侧肌群(膕绳肌)拉伤 (Hamstring Strain)", severity: "Medium", defaultPct: 8 },
+    { title: "踝关节三角韧带微裂 (Ankle Deltoid Sprain)", severity: "Medium", defaultPct: 7 },
+    { title: "膝关节外侧副韧带(LCL)Ⅰ级撕裂 (LCL Grade I Tear)", severity: "Medium", defaultPct: 10 },
+    { title: "比目鱼肌轻微挫伤 (Mild Soleus Contusion)", severity: "Low", defaultPct: 3 },
+    { title: "内膝盖半月板后角Ⅰ级信号损伤 (Meniscus Level I Degeneration)", severity: "High", defaultPct: 15 },
+    { title: "腹股沟内收肌腱疲劳拉伤 (Groin Adductor Strain)", severity: "Medium", defaultPct: 8 }
+  ];
+
+  // Loop through all 48 teams and perform authentic updates for EVERY SINGLE ONE!
+  for (const team of teamsDb) {
+    updateCount++;
+    const roll = Math.random();
+    
+    // Ensure team structures exist safely
+    if (!team.injuries) team.injuries = [];
+    if (!team.keyPlayers) team.keyPlayers = [];
+    
+    if (roll < 0.16) {
+      // 1. Injuries change (either recover an old one or add a new one)
+      const isRecovering = team.injuries.length > 0 && Math.random() > 0.45;
+      
+      if (isRecovering) {
+        // Recover an existing injury
+        const recovered = team.injuries.shift()!;
+        const player = team.keyPlayers.find(p => p.name === recovered.playerName);
+        if (player) {
+          player.status = "Healthy";
+        }
+        
+        // Recover rating & Elo
+        const oldElo = team.elo;
+        team.elo = Math.min(2150, team.elo + Math.round(recovered.impactPercent * 6.5));
+        
+        // Restore ratings
+        if (recovered.role === "FWD") team.ratings.attack = Math.min(99, team.ratings.attack + Math.round(recovered.impactPercent / 2));
+        else if (recovered.role === "MID") team.ratings.midfield = Math.min(99, team.ratings.midfield + Math.round(recovered.impactPercent / 2));
+        else team.ratings.defense = Math.min(99, team.ratings.defense + Math.round(recovered.impactPercent / 2));
+        
+        injuryRecoveredCount++;
+        if (highlights.length < 8) {
+          highlights.push(`【伤愈】${team.name}的核心主力 [${recovered.playerName}] 已彻底摆脱 [${recovered.injury}] 折磨，即时战力 Elo 从 ${oldElo} 回升至 ${team.elo} 点。`);
+        }
+      } else if (team.keyPlayers.length > 0) {
+        // New injury alert for a healthy player
+        const healthyPlayers = team.keyPlayers.filter(p => p.status === "Healthy");
+        if (healthyPlayers.length > 0) {
+          const player = healthyPlayers[Math.floor(Math.random() * healthyPlayers.length)];
+          player.status = Math.random() > 0.72 ? "Injured" : "Doubtful";
+          
+          const injuryChoice = injuryCatalog[Math.floor(Math.random() * injuryCatalog.length)];
+          const severity = (player.status === "Injured" ? "High" : injuryChoice.severity) as 'High' | 'Medium' | 'Low';
+          const pct = severity === "High" ? 12 : severity === "Medium" ? 8 : 4;
+          
+          const newStory = {
+            playerName: player.name,
+            role: player.role,
+            injury: injuryChoice.title,
+            severity,
+            impactPercent: pct,
+            status: severity === "High" ? "预估伤缺2-3周" : "每日伤情监控中"
+          };
+          
+          team.injuries.push(newStory);
+          
+          const oldElo = team.elo;
+          team.elo = Math.max(1200, team.elo - Math.round(pct * 6.5));
+          
+          // Deduct ratings
+          if (player.role === "FWD") team.ratings.attack = Math.max(60, team.ratings.attack - Math.round(pct / 2));
+          else if (player.role === "MID") team.ratings.midfield = Math.max(60, team.ratings.midfield - Math.round(pct / 2));
+          else team.ratings.defense = Math.max(60, team.ratings.defense - Math.round(pct / 2));
+          
+          injuryNewCount++;
+          if (highlights.length < 8) {
+            highlights.push(`【伤停】${team.name}的主力 [${player.name}] 确诊罹患 [${injuryChoice.title}]，确定为 ${severity === 'High' ? '严重' : severity === 'Medium' ? '中度' : '轻微'} 战力贬抑，Elo 下修 -${oldElo - team.elo}。`);
+          }
+        }
+      }
+    } else if (roll < 0.38) {
+      // 2. Tactical Evolution (Formation change and sliders refinement)
+      const formations = ["4-3-3", "4-2-3-1", "3-4-2-1", "3-5-2", "4-4-2", "4-1-4-1"];
+      const oldForm = team.tactics.preferredFormation;
+      const newForm = formations[Math.floor(Math.random() * formations.length)];
+      
+      team.tactics.preferredFormation = newForm;
+      
+      // Fine-tune sliders based on realistic coach behaviors
+      if (newForm === "3-4-2-1" || newForm === "3-5-2") {
+        team.tactics.possession = Math.min(95, Math.max(30, team.tactics.possession + 4));
+        team.tactics.pressing = Math.min(95, Math.max(30, team.tactics.pressing + 3));
+        team.tactics.defenseLine = Math.min(95, Math.max(35, team.tactics.defenseLine + 5));
+      } else if (newForm === "4-3-3" || newForm === "4-1-4-1") {
+        team.tactics.counterAttack = Math.min(95, Math.max(30, team.tactics.counterAttack + 3));
+        team.tactics.pressing = Math.min(95, Math.max(30, team.tactics.pressing + 2));
+      } else {
+        // Low block defensive style
+        team.tactics.defenseLine = Math.min(95, Math.max(30, team.tactics.defenseLine - 6));
+        team.tactics.counterAttack = Math.min(95, Math.max(30, team.tactics.counterAttack + 4));
+      }
+      
+      tacticsCount++;
+      if (highlights.length < 8 && oldForm !== newForm) {
+        highlights.push(`【变阵】${team.name}主帅变阵为【${newForm}】（原 ${oldForm}），重构了三线间隙压迫并微调了底层战术特质。`);
+      }
+    } else {
+      // 3. ELO / Warm-up performance indicator adjustment (+/- 5 to 15 ELO Points)
+      const isPositive = Math.random() > 0.46;
+      const magnitude = Math.floor(Math.random() * 11) + 5; // 5 to 15
+      
+      if (isPositive) {
+        team.elo = Math.min(2150, team.elo + magnitude);
+        team.ratings.attack = Math.min(99, team.ratings.attack + (Math.random() > 0.82 ? 1 : 0));
+        team.ratings.defense = Math.min(99, team.ratings.defense + (Math.random() > 0.82 ? 1 : 0));
+      } else {
+        team.elo = Math.max(1200, team.elo - magnitude);
+        team.ratings.midfield = Math.max(60, team.ratings.midfield - (Math.random() > 0.82 ? 1 : 0));
+      }
+      
+      scoreAdjustCount++;
+    }
+  }
+
+  // Composing extremely distinct, professional logs that cover continental intelligence nodes
+  const nowStr = new Date().toISOString();
+  
+  // Create continental briefs
+  const detailedLogs: SystemLog[] = [
     {
-      type: "injury" as const,
-      message: "Scraped latest physical logs. Hazard indicators suggest moderate fatigue warning for midfielders."
+      id: `log_crawler_${Date.now()}_1`,
+      timestamp: nowStr,
+      source: "Transfermarkt 德转大名单源",
+      type: "crawler",
+      message: `【德转情报数据流】全量完成了对世界杯 48 支征战国家队的物理和竞技数据对齐。共检测并更新了 ${injuryNewCount} 个新增医疗伤残因子，判定了 ${injuryRecoveredCount} 处休战豁免回归，重置了 ${tacticsCount} 个变阵细节。`,
+      confidenceScore: 99,
+      status: "Synced"
     },
     {
-      type: "crawler" as const,
-      message: "Analyzed xG ratios from recent international qualifiers. Adjusted counterAttack scores."
+      id: `log_crawler_${Date.now()}_2`,
+      timestamp: new Date(Date.now() - 500).toISOString(),
+      source: "Opta Pro 战术分析网关",
+      type: "analysis",
+      message: `【战术沙盘重构】由于 48 队阵式更迭，底层的预期 xG 及传控链条数据已进行了重算更新。 highlights 节点：${highlights.slice(0, 3).join(" ；")}`,
+      confidenceScore: 96,
+      status: "Synced"
     },
     {
-      type: "crawler" as const,
-      message: "Scraped official line-up charts. Detected tactical change towards 3-4-2-1 formation for central teams."
-    },
-    {
-      type: "injury" as const,
-      message: "Injury update: Star forwards declared fully recovered and added to the first-team rosters."
+      id: `log_crawler_${Date.now()}_3`,
+      timestamp: new Date(Date.now() - 1200).toISOString(),
+      source: "FIFA Data Hub (全球流)",
+      type: "injury",
+      message: `【官方伤愈警警报】队医诊断信息已完全注入。${highlights.filter(h => h.includes("【伤停】") || h.includes("【伤愈】")).slice(0, 2).join(" ; ")}`,
+      confidenceScore: 97,
+      status: "Synced"
     }
   ];
 
-  const randomEv = randomEvents[Math.floor(Math.random() * randomEvents.length)];
+  // OPTIONAL: Let Gemini write an incredibly professional and authentic overall scouting bulletin summarizing the 48-team micro-changes!
+  const apiKey = process.env.GEMINI_API_KEY;
+  if (apiKey) {
+    try {
+      const ai = new GoogleGenAI({ apiKey });
+      const aiPrompt = `
+You are the Chief Analytics Officer for an elite international football scouting agency (Opta Pro & Understat level).
+We have successfully audited and synchronized physical, injury, tactical configurations, and world ELO ratings for ALL 48 teams of the 2026 World Cup.
 
-  const newLog: SystemLog = {
-    id: `log_${Date.now()}`,
-    timestamp: new Date().toISOString(),
-    source: selectedSource,
-    type: randomEv.type,
-    message: `[${selectedSource}] ${randomEv.message}`,
-    confidenceScore: Math.floor(Math.random() * 15) + 84, // 84-99
-    status: Math.random() > 0.35 ? "Synced" : "Conflict Resolved"
-  };
+Highlights metrics:
+- Total Teams Refreshed: ${updateCount} teams
+- New physical injuries/lesions registered: ${injuryNewCount} players
+- Recovered back-to-fitness ratings: ${injuryRecoveredCount} players
+- Tactics/Formation updates: ${tacticsCount} managers adjusted preferred layout
+- Competitive Warm-up ELO fluctuations: ${scoreAdjustCount} teams shifted slightly
 
-  systemLogs.unshift(newLog);
-  if (systemLogs.length > 50) systemLogs.pop(); // Cap at 50
+Write active, premium sports news digests (in Chinese) for a marquee overall bulletin.
+Ensure they sound incredibly professional, containing genuine, technical terminology (e.g. 战力评级回归, 队医绿灯, 医疗代偿, ELO 动态校准, 高位压迫阻抗, 德转名单特征覆盖).
+Rule:
+- Return 2 crisp bulletins, each under 120 characters, focusing on the wide scale 48-team modernization.
+- No markdown formatting wrappers like "Bulletin 1:" or backticks. Return them as plain text lines separated by a newline.
+      `;
+      
+      const response = await ai.models.generateContent({
+        model: "gemini-2.5-flash",
+        contents: aiPrompt,
+        config: {
+          temperature: 0.82,
+          maxOutputTokens: 250
+        }
+      });
+      
+      if (response && response.text) {
+        const lines = response.text.split("\n").map(l => l.trim()).filter(l => l.length > 5);
+        if (lines.length > 0) {
+          lines.forEach((line, index) => {
+            detailedLogs.push({
+              id: `log_gemini_${Date.now()}_${index}`,
+              timestamp: new Date(Date.now() - 2000 - index * 1000).toISOString(),
+              source: "FIFA Data Hub (全球流)",
+              type: index === 0 ? "analysis" : "crawler",
+              message: `【全网智能综述】${line}`,
+              confidenceScore: 98,
+              status: "Cleaned"
+            });
+          });
+        }
+      }
+    } catch (err) {
+      console.error("Gemini failed to enrich 48-team crawler report logs, using fallback:", err);
+    }
+  }
 
-  res.json({ success: true, log: newLog, data: systemLogs });
+  // Prepend new logs
+  systemLogs = [...detailedLogs, ...systemLogs];
+  if (systemLogs.length > 50) systemLogs = systemLogs.slice(0, 50); // Cap list at 50
+
+  res.json({ success: true, log: detailedLogs[0], data: systemLogs });
 });
 
 // Compare Head to Head match directly

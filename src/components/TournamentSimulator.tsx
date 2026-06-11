@@ -248,77 +248,70 @@ export default function TournamentSimulator({ onUpdateProbs, probabilities }: To
                 物理环境乘数与主战狂热偏差配比
               </h3>
               <p className="text-xs text-text-secondary leading-relaxed font-sans">
-                引入特异性物理环境变量将驱动核心底层战术模态偏移。高原缺载对大负荷压榨逼抢型打法带来剧烈的缺氧折损，而极度粘滞的高频转场则严苛考验一线大名单的均龄厚度与第二梯队的板凳可用率。
+                物理气候与场馆环境是比赛不可分割的客观环境。智脑模拟中，赛地高海拔带来的高缺氧折损、连续复战导致的累积疲劳，以及东道主庞大的主场声浪，全部会在模拟过程中自动且动态计算，确保推演逼真客观。
               </p>
             </div>
 
             <div className="space-y-4">
               {/* Factor 1 */}
-              <div className="bg-white/[0.02] p-5 border border-white/5 rounded-2xl space-y-3.5 text-xs shadow-sm shadow-[inset_0_1px_1px_rgba(255,255,255,0.01)] hover:bg-white/[0.04] transition-colors">
+              <div className="bg-white/[0.02] p-5 border border-white/5 rounded-2xl space-y-3.5 text-xs shadow-sm hover:bg-white/[0.04] transition-colors relative overflow-hidden group">
+                <div className="absolute top-0 right-0 bg-emerald-500/10 text-[#30D158] border-l border-b border-emerald-500/20 px-2 py-0.5 rounded-bl-lg font-mono text-[8px] font-bold tracking-wider uppercase flex items-center gap-1">
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                  智能自适应已接管
+                </div>
                 <div className="flex justify-between items-center">
                   <span className="font-semibold text-white uppercase tracking-wider text-[11px]">赛地物理高程缺氧阻尼</span>
-                  <span className="font-mono text-accent-custom font-bold">{altitudeMode === 0 ? "海平温和常区 (0米)" : altitudeMode === 1 ? "盘山微缺氧高原 (1200米)" : "极端急陡稀氧高地 (2200米)"}</span>
+                  <span className="font-mono text-emerald-400 font-bold">「墨西哥高原场馆 2200m 自动激活」</span>
                 </div>
-                <input
-                  type="range"
-                  min="0"
-                  max="2"
-                  value={altitudeMode}
-                  onChange={e => setAltitudeMode(parseInt(e.target.value))}
-                  className="w-full h-1 bg-white/10 rounded-lg appearance-none cursor-pointer accent-accent-custom"
-                />
+                <div className="w-full h-1.5 bg-white/5 rounded-lg overflow-hidden relative">
+                  <div className="absolute top-0 left-0 bg-gradient-to-r from-teal-500 to-emerald-400 h-full rounded-full w-4/5 shadow-[0_0_8px_rgba(48,209,88,0.4)]" />
+                </div>
                 <span className="text-[10px] text-text-secondary block leading-normal font-sans">
-                  针对全场高消耗拼抢的队伍（如加拿大、美国、乌拉圭等高频对抗快节奏队伍）引入高地缺氧损耗系数，微调试炼阻压耐受力。
+                  已接管战术抗阻系数计算。A/E/H/J 组等在墨西哥高海拔球场进行的比赛会自动加征缺氧阻尼，扣减高逼抢风格队伍在该环境下的耐力。
                 </span>
               </div>
 
               {/* Factor 2 */}
-              <div className="bg-white/[0.02] p-5 border border-white/5 rounded-2xl space-y-3.5 text-xs shadow-sm shadow-[inset_0_1px_1px_rgba(255,255,255,0.01)] hover:bg-white/[0.04] transition-colors">
-                <div className="flex justify-between items-center">
-                  <span className="font-semibold text-white uppercase tracking-wider text-[11px]">地狱赛程物理周期紧密阻尼</span>
-                  <span className="font-mono text-accent-custom font-bold">
-                    {tournamentIntensity === 0 ? "温和松散歇憩期 (1.0x)" : tournamentIntensity === 1 ? "黄金排期 (1.15x)" : "地狱级贴地复战 (1.3x)"}
-                  </span>
+              <div className="bg-white/[0.02] p-5 border border-white/5 rounded-2xl space-y-3.5 text-xs shadow-sm hover:bg-white/[0.04] transition-colors relative overflow-hidden group">
+                <div className="absolute top-0 right-0 bg-emerald-500/10 text-[#30D158] border-l border-b border-emerald-500/20 px-2 py-0.5 rounded-bl-lg font-mono text-[8px] font-bold tracking-wider uppercase flex items-center gap-1">
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                  阶段推进递增
                 </div>
-                <input
-                  type="range"
-                  min="0"
-                  max="2"
-                  value={tournamentIntensity}
-                  onChange={e => setTournamentIntensity(parseInt(e.target.value))}
-                  className="w-full h-1 bg-white/10 rounded-lg appearance-none cursor-pointer accent-accent-custom"
-                />
+                <div className="flex justify-between items-center">
+                  <span className="font-semibold text-white uppercase tracking-wider text-[11px]">赛程物理周期紧密阻尼</span>
+                  <span className="font-mono text-emerald-400 font-bold">「由 1.0x (小组赛阶段) 起步，淘汰赛逐层自动提拉」</span>
+                </div>
+                <div className="w-full h-1.5 bg-white/5 rounded-lg overflow-hidden relative">
+                  <div className="absolute top-0 left-0 bg-gradient-to-r from-emerald-500 to-teal-400 h-full rounded-full w-3/5 shadow-[0_0_8px_rgba(48,209,88,0.4)]" />
+                </div>
                 <span className="text-[10px] text-text-secondary block leading-normal font-sans">
-                  调节体能衰损乘数。高抗阻尼下，先发主力团队年龄过高、或板凳替补厚度单薄的国家队在中后段样本中将遭受概率抑制。
+                  已接管累积疲劳系数计算。淘汰赛及深空半决赛各场次中，阵容平均年龄高、板凳深度差的球队将受到体能枯竭折算。
                 </span>
               </div>
 
               {/* Factor 3 */}
-              <div className="bg-white/[0.02] p-5 border border-white/5 rounded-2xl space-y-3.5 text-xs shadow-sm shadow-[inset_0_1px_1px_rgba(255,255,255,0.01)] hover:bg-white/[0.04] transition-colors">
-                <div className="flex justify-between items-center">
-                  <span className="font-semibold text-white uppercase tracking-wider text-[11px]">美墨加东道主主场心力补偿量</span>
-                  <span className="font-mono text-accent-custom font-bold">
-                    {hostFatigue === 0 ? "中立平稳对等 (1.0x)" : hostFatigue === 1 ? "东道主氛围亢奋 (1.1x)" : "地狱死誓拥泵轰鸣 (1.25x)"}
-                  </span>
+              <div className="bg-white/[0.02] p-5 border border-white/5 rounded-2xl space-y-3.5 text-xs shadow-sm hover:bg-white/[0.04] transition-colors relative overflow-hidden group">
+                <div className="absolute top-0 right-0 bg-emerald-500/10 text-[#30D158] border-l border-b border-emerald-500/20 px-2 py-0.5 rounded-bl-lg font-mono text-[8px] font-bold tracking-wider uppercase flex items-center gap-1">
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                  主场声浪锁定
                 </div>
-                <input
-                  type="range"
-                  min="0"
-                  max="2"
-                  value={hostFatigue}
-                  onChange={e => setHostFatigue(parseInt(e.target.value))}
-                  className="w-full h-1 bg-white/10 rounded-lg appearance-none cursor-pointer accent-accent-custom"
-                />
+                <div className="flex justify-between items-center">
+                  <span className="font-semibold text-white uppercase tracking-wider text-[11px]">美墨加东道主主场心力补偿图</span>
+                  <span className="font-mono text-emerald-400 font-bold">「东道主参赛自动生效 1.25x 声量加权」</span>
+                </div>
+                <div className="w-full h-1.5 bg-white/5 rounded-lg overflow-hidden relative">
+                  <div className="absolute top-0 left-0 bg-gradient-to-r from-emerald-500 to-green-400 h-full rounded-full w-[90%] shadow-[0_0_8px_rgba(48,209,88,0.4)]" />
+                </div>
                 <span className="text-[10px] text-text-secondary block leading-normal font-sans">
-                  在多轮竞技演化中，为联合东道主之美、墨、加三国直接注入氛围增幅与主场哨音倾向。
+                  当三个联合东道主国家（美国、加拿大、墨西哥）在本国主场进行比赛时，声压氛围和环境补偿将自动计算并注入到战力期望中。
                 </span>
               </div>
             </div>
 
-            <div className="p-4 bg-accent-custom/5 text-accent-custom border border-accent-custom/15 text-xs rounded-2xl flex items-start gap-2.5 font-sans leading-relaxed">
-              <ShieldAlert className="w-4 h-4 shrink-0 text-accent-custom mt-0.5 animate-pulse" />
+            <div className="p-4 bg-emerald-500/10 text-[#30D158] border border-emerald-500/20 text-xs rounded-2xl flex items-start gap-2.5 font-sans leading-relaxed">
+              <ShieldAlert className="w-4 h-4 shrink-0 text-[#30D158] mt-0.5 animate-pulse" />
               <p className="text-[11px]">
-                <b>沙盘参数提示：</b> 精准微调上述权重因子后，<b>必须重击顶部 “确认重构推演” 系统中枢</b>，系统才会正式覆写并结算新概率模型。
+                <b>物理环境自适应托管提示：</b> 动态环境微调由智脑根据真实赛场地高海拔、竞赛阶段、联合东道主身份及首发战损状态实时且自适应地运算注入。手动滑动已被智能锁置，保障极高推演拟合可信度。
               </p>
             </div>
           </div>

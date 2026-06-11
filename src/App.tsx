@@ -118,6 +118,12 @@ export default function App() {
       const data = await res.json();
       if (data.success) {
         setLogs(data.data);
+        // Automatically fetch and synchronize the mutated teams database state in-client!
+        const teamsRes = await fetch("/api/teams");
+        const teamsData = await teamsRes.json();
+        if (teamsData.success) {
+          setTeams(teamsData.data);
+        }
       }
     } catch (err) {
       console.error(err);
